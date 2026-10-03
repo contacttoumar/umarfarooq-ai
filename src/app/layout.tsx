@@ -22,18 +22,20 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://contactumar.com"),
-  title: "Umar Farooq · Senior Software Engineer, Laravel and AI",
+  title: "Umar Farooq · Senior Software Engineer · Full-Stack & Platform",
   description:
-    "Senior software engineer in Lahore. Eight years on Laravel systems—one holding 50,000 concurrent users—plus production LLM and RAG features.",
+    "Senior Software Engineer in Lahore. Commerce, ticketing ops, ACH fintech, Laravel/Node, React/Vue, Redis/Elasticsearch, AWS, and production AI — systems that survive real traffic.",
   keywords: [
     "Umar Farooq",
     "Senior Software Engineer",
     "Laravel",
-    "PHP",
+    "React",
+    "Vue",
+    "Node.js",
+    "AWS",
     "AI",
-    "RAG",
-    "Lahore",
-    "contactumar",
+    "contacttoumar",
+    "umarfarooq-ai",
   ],
   authors: [{ name: "Umar Farooq", url: "https://contactumar.com" }],
   icons: {
@@ -41,9 +43,9 @@ export const metadata: Metadata = {
     apple: "/images/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Umar Farooq · Senior Software Engineer, Laravel and AI",
+    title: "Umar Farooq · Senior Software Engineer · Full-Stack & Platform",
     description:
-      "Eight years on Laravel systems and production AI features. Based in Lahore, open to senior and lead roles.",
+      "Commerce, ticketing, ACH fintech, Laravel/Node, React/Vue, Redis/ES, AWS, production AI. Lahore · UTC+5.",
     url: "https://contactumar.com",
     siteName: "Umar Farooq",
     type: "website",

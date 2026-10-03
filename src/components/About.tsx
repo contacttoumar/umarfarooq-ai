@@ -30,7 +30,7 @@ export function About() {
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-bright">About</p>
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight md:text-5xl">
-              Laravel at scale. AI features that stay in production.
+              Systems that survive real traffic and real failure modes.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">{profile.bio}</p>
             <p className="mt-3 text-sm text-white/45">{profile.education}</p>
@@ -40,7 +40,8 @@ export function About() {
                 <span className="text-accent-bright">$</span> whoami
               </p>
               <p className="mt-2 text-white/55">
-                umar farooq · senior software engineer · laravel / vue / ai · lahore · open to senior &amp; lead roles
+                umar farooq · senior software engineer · full-stack &amp; platform · commerce / ticketing / fintech / ai ·
+                lahore · utc+5
               </p>
               <p className="mt-4">
                 <span className="text-accent-bright">$</span> stack --daily
@@ -57,7 +58,15 @@ export function About() {
                   LinkedIn
                 </a>
                 <a className="hover:text-accent-bright" href={profile.github} target="_blank" rel="noopener noreferrer">
-                  GitHub
+                  github.com/contacttoumar
+                </a>
+                <a
+                  className="hover:text-accent-bright"
+                  href={profile.githubRepo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  umarfarooq-ai
                 </a>
               </p>
             </div>

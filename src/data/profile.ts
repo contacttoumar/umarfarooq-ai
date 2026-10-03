@@ -1,30 +1,38 @@
 export const profile = {
   name: "Umar Farooq",
-  title: "Senior Software Engineer · Laravel & AI",
+  title: "Senior Software Engineer · Full-Stack & Platform",
   tagline:
-    "Eight years on live Laravel systems—and the AI features that land on top of them.",
+    "I design and ship software that survives real users, real traffic, and real failure modes — commerce, ticketing ops, ACH rails, and production AI.",
   location: "Lahore, Pakistan · UTC+5",
-  availability: "Open to senior and lead roles",
+  availability: "Open to senior and lead roles · Remote worldwide",
   years: "8+",
-  projects: "5+",
+  projects: "8+",
   email: "umar7400@gmail.com",
   phone: "",
   website: "https://contactumar.com",
   github: "https://github.com/contacttoumar",
+  githubRepo: "https://github.com/contacttoumar/umarfarooq-ai",
   linkedin: "https://www.linkedin.com/in/contacttoumar",
-  resumeNote: "Senior Software Engineer · Senior PHP / Laravel",
+  resumeNote: "Senior Software Engineer · Full-Stack & Platform",
   photo: "/images/umar-farooq.webp",
   photoAlt: "Umar Farooq, Senior Software Engineer",
-  bio: `Senior software engineer in Lahore. Most of my work is Laravel on systems that were already live when I arrived—migrations, performance work, and codebases that grew faster than anyone planned for. Lately I also ship LLM features into those same products: retrieval, agents, and support assistants with tracing from day one.`,
-  focus: ["Laravel · PHP", "Vue · Inertia", "Next.js · React", "Redis · MySQL", "OpenAI · RAG", "AWS"],
+  bio: `I'm a Senior Software Engineer based in Lahore with 8+ years building production systems that cannot afford silent failure. Backend-heavy and systems-focused: checkout integrity, concurrent inventory locks, idempotent payments, Redis/Elasticsearch hot paths, AWS load balancing, and AI features that stay observable after the prototype. I work across React, Vue, Laravel, and Node when shipping requires it — but the problems I care about live at the integrity layer.`,
+  focus: [
+    "Laravel · Node",
+    "React · Vue",
+    "Redis · Elasticsearch",
+    "AWS ALB",
+    "Webhooks · Idempotency",
+    "OpenAI · Production AI",
+  ],
   education: "Master's in Computer Science · The Islamia University of Bahawalpur",
 };
 
 export const stats = [
-  { label: "Years shipping Laravel", value: "8+" },
-  { label: "Concurrent users sustained", value: "50K+" },
-  { label: "Downtime cut (migration)", value: "~30%" },
-  { label: "Core stack", value: "Laravel" },
+  { label: "Years shipping", value: "8+" },
+  { label: "Concurrent users", value: "50K+" },
+  { label: "Featured platforms", value: "3" },
+  { label: "Timezone", value: "UTC+5" },
 ];
 
 export type StackScenario = {
@@ -92,51 +100,55 @@ export const stackScenarios: StackScenario[] = [
 export const services = [
   {
     code: "01",
-    title: "Web Development",
-    blurb: "Production Laravel and Vue applications built to be handed over—not locked to one person's laptop.",
+    title: "Commerce & marketplace systems",
+    blurb:
+      "Buy/sell platforms where money, inventory, and trust collide — checkout integrity under concurrency, not just a pretty storefront.",
     points: [
-      "End-to-end Laravel platforms",
-      "Vue / Inertia / Livewire front ends",
-      "Legacy modernisation without a risky cutover",
-      "Documented deploy paths from local to production",
+      "React storefronts with API-driven catalogs",
+      "Multi-rail checkout and sell-side payouts",
+      "Loyalty ledgers that survive refunds",
+      "Redis + Elasticsearch hot paths under sale spikes",
     ],
-    stack: ["Laravel", "Vue.js", "Inertia", "MySQL", "AWS"],
+    stack: ["React", "Node/PHP", "Redis", "Elasticsearch", "AWS ALB"],
   },
   {
     code: "02",
-    title: "AI & LLM Features",
-    blurb: "Language-model features inside apps that already have users—with tracing and evaluation from day one.",
+    title: "Ticketing & ops platforms",
+    blurb:
+      "Broker/admin systems where seconds matter — inventory state machines, distributed holds, search that does not time out.",
     points: [
-      "Support assistants and in-product copilots",
-      "RAG over company documents",
-      "Agents that call internal tools",
-      "OpenAI, Anthropic, LangChain, Langfuse",
+      "Vue admin SPAs with JWT + RBAC",
+      "Redis holds across load-balanced API nodes",
+      "Elasticsearch inventory search & autocomplete",
+      "AI demand/pricing/match workers",
     ],
-    stack: ["OpenAI", "Claude", "LangChain", "RAG", "Langfuse"],
+    stack: ["Vue.js", "React", "Node.js", "Redis", "Elasticsearch"],
   },
   {
     code: "03",
-    title: "Backend & APIs",
-    blurb: "Data models, queues, and REST contracts that keep working as traffic grows.",
+    title: "Payments & ACH rails",
+    blurb:
+      "Multi-repo fintech where webhooks are the product — idempotency, HMAC signatures, Woo plugins, invoice portals.",
     points: [
-      "API design with versioning",
-      "Queues, caching, and background jobs",
-      "Monolith to microservices in slices",
-      "Performance profiling before big rewrites",
+      "Laravel domain + Node agent APIs",
+      "Idempotent payment writes and Redis locks",
+      "HMAC webhooks with replay tooling",
+      "WooCommerce + React/Vue merchant panels",
     ],
-    stack: ["Laravel", "PHP", "Redis", "Node.js", "REST"],
+    stack: ["Laravel", "Node.js", "WooCommerce", "Redis", "AWS"],
   },
   {
     code: "04",
-    title: "Consulting",
-    blurb: "A second opinion on an existing codebase before you commit to a rewrite.",
+    title: "Production AI & platform reviews",
+    blurb:
+      "AI hooks that survive traffic — fraud/pricing copilots, tracing, budgets — plus architecture reviews before the rewrite.",
     points: [
-      "Architecture and migration reviews",
-      "Performance root-cause sessions",
-      "Code review culture for the team",
-      "Honest fit assessment on the engagement",
+      "Support/broker copilots with real context",
+      "Fraud and pricing pipeline hooks",
+      "Cost, retries, and graceful degradation",
+      "Performance and concurrency root-cause sessions",
     ],
-    stack: ["Laravel", "AWS", "SaaS", "Git"],
+    stack: ["OpenAI", "Claude", "LangChain", "Laravel", "Observability"],
   },
 ];
 
@@ -271,11 +283,28 @@ export const experience = [
 ];
 
 export const skills = {
-  backend: ["Laravel", "PHP", "Node.js", "CodeIgniter", "REST APIs", "Microservices", "WooCommerce"],
-  frontend: ["React.js", "Vue.js", "Next.js", "Inertia.js", "Livewire", "TypeScript"],
-  data: ["MySQL", "Redis", "Elasticsearch / OpenSearch", "Socket.IO"],
-  ai: ["OpenAI API", "Anthropic Claude", "LangChain", "RAG", "Fraud / pricing copilots"],
-  ops: ["AWS ALB", "SQS", "CloudFront", "S3", "RDS", "CloudWatch", "CI/CD"],
+  backend: [
+    "PHP",
+    "Laravel",
+    "Node.js",
+    "REST APIs",
+    "Webhooks",
+    "Queues / workers",
+    "Idempotency",
+    "WooCommerce",
+  ],
+  frontend: ["React.js", "Vue.js", "Next.js", "Inertia.js", "TypeScript", "Admin SPAs", "Real-time UX"],
+  data: ["MySQL / RDS", "Redis locks & cache", "Elasticsearch / OpenSearch", "Read replicas", "Socket.IO"],
+  ai: ["OpenAI", "Claude", "LangChain", "RAG / embeddings", "Fraud & pricing hooks", "Support copilots"],
+  ops: ["AWS ALB", "SQS", "CloudFront", "S3", "ElastiCache", "CloudWatch", "CI/CD", "WAF"],
+  architecture: [
+    "Microservices boundaries",
+    "Multi-tenancy",
+    "Payment rails",
+    "Inventory state machines",
+    "Observability",
+    "Reliability",
+  ],
 };
 
 export const testimonials = [
@@ -320,22 +349,32 @@ export const testimonials = [
 export const principles = [
   {
     code: "01",
-    title: "Measure before you propose",
-    body: "On TheTutor.me the API was slow because the same third-party calls repeated inside one request. Caching them in middleware cut response time ~25%. Nobody had named that culprit going in.",
+    title: "Integrity before polish",
+    body: "A beautiful checkout that double-charges is not shipped. Idempotency keys, locks, and state machines beat hope.",
   },
   {
     code: "02",
-    title: "Move one flow at a time",
-    body: "Hello World's monolith became microservices in pieces while old paths still served traffic. Downtime fell ~30%. The Laravel 4→8 upgrade at In All Media ran the same way.",
+    title: "Measure before proposing",
+    body: "Profile the slow path. On TheTutor.me the culprit was repeated third-party calls inside one request — not the database everyone blamed.",
   },
   {
     code: "03",
-    title: "Write down how to deploy it",
-    body: "On DineHome the local→dev→staging→production path was a deliverable. At BitClans I ran code review for the same reason: the team should ship when I am offline.",
+    title: "Concurrency is a product requirement",
+    body: "Two brokers, one lot, multiple API nodes: Redis holds and inventory state machines make the failure mode visible and preventable.",
   },
   {
     code: "04",
-    title: "AI with evaluation",
-    body: "LLM features need tracing (Langfuse), spend awareness, and retrieval scoped like the rest of the product—not a chat demo pasted on the side.",
+    title: "Observability is part of the feature",
+    body: "If you cannot see queue lag, webhook failure ratio, and checkout error rate, you do not own the system yet.",
+  },
+  {
+    code: "05",
+    title: "AI needs budgets and failure modes",
+    body: "Prompts alone are not architecture. Production AI needs traces, spend controls, retries, and scoped data.",
+  },
+  {
+    code: "06",
+    title: "Write down how to deploy it",
+    body: "The team should ship when I am offline. Staging parity and documented release paths are deliverables.",
   },
 ];

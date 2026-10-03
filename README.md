@@ -1,39 +1,36 @@
 # umarfarooq-ai
 
-**Umar Farooq** — Senior Software Engineer · Laravel & AI · Lahore
+**Umar Farooq** — Senior Software Engineer · Full-Stack & Platform  
+GitHub: [contacttoumar](https://github.com/contacttoumar) · Repo: [umarfarooq-ai](https://github.com/contacttoumar/umarfarooq-ai)
 
-GitHub: [contacttoumar](https://github.com/contacttoumar)  
-Portfolio repo: [contacttoumar/umarfarooq-ai](https://github.com/contacttoumar/umarfarooq-ai)  
-Site: [contactumar.com](https://contactumar.com) · Email: umar7400@gmail.com
+Professional portfolio template + GitHub profile README. Structured like a senior engineering dossier: problem-solving, production impact, full stack coverage, and clear ways to work together.
 
-Next.js portfolio template + GitHub profile README for Umar Farooq.
+## Contents
 
-## Run locally
+| Path | Purpose |
+|---|---|
+| `src/` | Next.js portfolio site |
+| `github-profile/README.md` | Copy into `contacttoumar/contacttoumar` for GitHub profile home |
+| `src/data/profile.ts` | All copy, projects, stack, services |
+
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
+→ [http://127.0.0.1:4321](http://127.0.0.1:4321)
 
-Edit content: `src/data/profile.ts` · Images: `public/images/`
-
-## Push to GitHub (`contacttoumar/umarfarooq-ai`)
+## Publish
 
 ```bash
 git remote add github https://github.com/contacttoumar/umarfarooq-ai.git
 git push -u github main
 ```
 
-## GitHub profile README
+Profile home: paste `github-profile/README.md` into repo **`contacttoumar/contacttoumar`**.
 
-Copy [`github-profile/README.md`](./github-profile/README.md) into a repo named **`contacttoumar/contacttoumar`** so it appears on your GitHub profile home.
+## Positioning
 
-## Featured projects
-
-LuckyCharmGold · Direct To You Tickets · Greencard · TheTutor.me · EventBuizz · ParkFlow · Doocado · DineHome
-
-## Stack
-
-Next.js · TypeScript · Tailwind CSS v4 · Framer Motion
+Senior Software Engineer · Full-Stack & Platform · Commerce · Ticketing · Fintech · Laravel · React/Vue · Node · Redis · Elasticsearch · AWS · AI/LLM
