@@ -164,8 +164,7 @@ I'm based in **Lahore, Pakistan (UTC+5)** and work remotely with teams worldwide
 </p>
 
 <sub>
-<strong>Works across:</strong> AI / LLM features · solution architecture · multi-tenant SaaS · payments & ACH · real-time apps<br/>
-<strong>With:</strong> Laravel · Node · React · Vue · Next.js · TypeScript · MySQL · Redis · Elasticsearch · OpenSearch · AWS (ALB, SQS, RDS, CloudFront) · OpenAI · Socket.IO · Inertia · WooCommerce · Docker · HMAC webhooks · idempotent order flows
+AI Engineer · Solution Architect · Production LLM Systems · Multi-Tenancy · Payments & Webhooks · Laravel · Node · React · Vue · Redis · Elasticsearch · AWS
 </sub>
 
 <br /><br />
