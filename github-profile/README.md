@@ -103,48 +103,25 @@ The decisions that are cheap on day one and expensive on day three hundred:
 
 ---
 
-## Current engineering focus
+## Failure drills
 
-The questions I find most interesting sit where **AI features, payments-grade reliability and multi-tenant architecture** meet.
+The scenarios I design for before the happy path. Each row is a guarantee the system has to keep, and how it is kept.
 
-```text
-production-ai/
-├── scoring-in-the-pipeline
-├── copilots-with-real-context
-├── semantic-matching
-├── cost-and-ownership-controls
-├── fallbacks-and-degradation
-└── evaluation-and-tracing
-
-reliable-platforms/
-├── idempotency-and-replay
-├── state-machines
-├── distributed-holds
-├── tenant-isolation
-├── queues-and-workers
-└── load-balanced-aws
-```
-
-What I keep asking once a prototype works:
-
-**What happens to checkout when the model is slow, wrong, or down?**
-
-**Can retrieval, a cache or a trace cross a tenant boundary the database never would?**
-
-**Who triggered this model call, what did it read, and what did it cost?**
-
-**If this webhook is delivered three times out of order, how many effects happen?**
-
-**How do I change this flow without a maintenance window?**
-
----
-
-## Patterns I reach for
-
-Sketches of the approach, not excerpts from client code.
+| Scenario | Guarantee | How |
+| --- | --- | --- |
+| Same request arrives twice | One charge, one order | Idempotency key claimed in Redis before any work; the stored response is replayed |
+| Webhook delivered three times, out of order | One effect, correct final state | HMAC check, event ledger with a unique `event_id`, state machine rejects stale transitions |
+| Two operators act on the same lot | One sale | Redis hold (`NX` + TTL), compare-and-delete release, database state machine as the source of truth |
+| Customer double-clicks pay | One capture | Lock around the payment plus an already-paid check |
+| Model is slow, wrong or down | Checkout carries on | Timeout, deterministic rules as fallback, the miss is traced |
+| Tenant A's data could reach tenant B through a cache, a queue or retrieval | It cannot | Scoped models, tenant in cache keys, queue payloads and index filters, a canary tenant tested on every release |
+| Payment or bank provider goes down | The feature degrades, the flow survives | Circuit breaker, queued retry with backoff |
+| On-sale or sale-day traffic spike | Latency holds | ALB + auto scaling, read replicas, cached rates, SQS workers scaled on queue depth |
+| Deploy during live traffic | No downtime | Expand-and-contract migrations, feature flags, a rollback path |
+| Large CSV import | No admin timeout, no half-applied data | Async job, validation, failed-row report, partial-commit safety |
 
 <details>
-<summary><b>Idempotent write: a retry never charges twice</b></summary>
+<summary><b>Idempotent write (Node)</b></summary>
 
 ```js
 async function idempotent(req, res, next) {
@@ -166,7 +143,7 @@ async function idempotent(req, res, next) {
 </details>
 
 <details>
-<summary><b>Webhooks: at-least-once delivery, exactly-once effect</b></summary>
+<summary><b>Webhook: verify, dedupe, apply (Node)</b></summary>
 
 ```js
 function verify(rawBody, signature, secret) {
@@ -176,7 +153,6 @@ function verify(rawBody, signature, secret) {
   return a.length === b.length && crypto.timingSafeEqual(a, b);
 }
 
-// the unique key on event_id turns a duplicate delivery into a no-op
 const { affectedRows } = await db.query(
   "INSERT IGNORE INTO webhook_events (event_id, type, payload) VALUES (?, ?, ?)",
   [event.id, event.type, rawBody]
@@ -190,16 +166,17 @@ await queue.add("apply-event", { eventId: event.id });
 <summary><b>Inventory hold with expiry (Redis)</b></summary>
 
 ```text
-SET hold:{lot_id} {broker_id}:{token} NX EX 300     # take the hold; fails if someone has it
-...                                                  # sell it, or let it expire
+SET hold:{lot_id} {broker_id}:{token} NX EX 300
+
 release (Lua, compare-and-delete):
   if redis.call("GET", KEYS[1]) == ARGV[1] then return redis.call("DEL", KEYS[1]) end
 ```
-Every API node behind the load balancer sees the hold. The database remains the source of truth through an explicit state machine: `available → held → sold → fulfilled / cancelled`.
+
+State machine behind it: `available → held → sold → fulfilled / cancelled`.
 </details>
 
 <details>
-<summary><b>Tenant isolation at the model layer (Laravel)</b></summary>
+<summary><b>Tenant scope (Laravel)</b></summary>
 
 ```php
 class TenantScope implements Scope
@@ -219,11 +196,10 @@ trait BelongsToTenant
     }
 }
 ```
-The same rule has to reach queues, cache keys, file paths and AI retrieval.
 </details>
 
 <details>
-<summary><b>A model call with an owner, a budget and a fallback (TypeScript)</b></summary>
+<summary><b>Guarded model call (TypeScript)</b></summary>
 
 ```ts
 async function guardedCall<T>({ feature, tenantId, userId, run, fallback }: Call<T>): Promise<T> {
@@ -239,46 +215,15 @@ async function guardedCall<T>({ feature, tenantId, userId, run, fallback }: Call
   }
 }
 ```
-</details>
 
 ```text
-order created ─► enqueue score job ─► features ─► model / rules ─► score + reason stored on the order
-                                          │
-                       timeout or provider error ─► deterministic rules take over, flow continues
+order created -> enqueue score job -> features -> model / rules -> score + reason on the order
+                                          |
+                     timeout or provider error -> rules take over, flow continues
 ```
+</details>
 
----
-
-## Open-source direction
-
-I would rather publish a few small, sharp tools than a shelf of demos. The ideas I'm shaping:
-
-### Webhook replay harness
-
-A test kit that throws the delivery patterns real providers produce at an endpoint, and asserts the effect happens once.
-
-```bash
-replay-harness run --endpoint /webhooks/payments \
-  --scenarios duplicate,late,out-of-order,concurrent,bad-signature
-```
-
-### Guarded model calls
-
-A small library that makes the safe path the easy path for AI features: every call carries an owner, a budget, a timeout, a trace and a fallback, or it does not compile.
-
-```ts
-const reply = await ai.call({
-  feature: "support-copilot",
-  tenant, user,
-  budget: { perDay: 200 },
-  timeoutMs: 4000,
-  fallback: () => rulesBasedReply(order),
-});
-```
-
-### Money-path checklist as tests
-
-The questions I ask before any payment or inventory flow ships, written as executable checks: retried, concurrent, late, and provider-down.
+Sketches of the approach, not client code.
 
 ---
 
@@ -393,11 +338,8 @@ Frameworks change every year. Failure modes mostly do not.
 
 ## What you'll find here
 
-This profile holds the engineering side of my work. Most of my production code belongs to clients and stays private, so expect the public part to be:
+This profile is the engineering side of my work. Most production code belongs to clients and stays private, so the public part is:
 
-* small tools for **payments-grade reliability** (idempotency, replay, locks)
-* **production AI patterns** (guarded calls, scoring hooks, fallbacks)
-* **multi-tenant** isolation helpers and checks
 * notes and sketches from systems I have shipped
 * the source of my [portfolio site](https://github.com/contacttoumar/umarfarooq-ai)
 
