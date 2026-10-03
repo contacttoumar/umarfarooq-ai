@@ -164,7 +164,8 @@ I'm based in **Lahore, Pakistan (UTC+5)** and work remotely with teams worldwide
 </p>
 
 <sub>
-Day-to-day stack: Laravel · Node · React · Vue · Next.js · TypeScript · MySQL · Redis · Elasticsearch · AWS (ALB, SQS, RDS) · OpenAI / LLM APIs · Socket.IO · WooCommerce · Idempotent payments · HMAC webhooks · Multi-tenant SaaS
+<strong>Works across:</strong> AI / LLM features · solution architecture · multi-tenant SaaS · payments & ACH · real-time apps<br/>
+<strong>With:</strong> Laravel · Node · React · Vue · Next.js · TypeScript · MySQL · Redis · Elasticsearch · OpenSearch · AWS (ALB, SQS, RDS, CloudFront) · OpenAI · Socket.IO · Inertia · WooCommerce · Docker · HMAC webhooks · idempotent order flows
 </sub>
 
 <br /><br />
