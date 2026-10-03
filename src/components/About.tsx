@@ -30,7 +30,7 @@ export function About() {
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-bright">About</p>
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight md:text-5xl">
-              Systems that survive real traffic and real failure modes.
+              Solution architecture. Production AI. Systems that survive traffic.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">{profile.bio}</p>
             <p className="mt-3 text-sm text-white/45">{profile.education}</p>
@@ -40,8 +40,7 @@ export function About() {
                 <span className="text-accent-bright">$</span> whoami
               </p>
               <p className="mt-2 text-white/55">
-                umar farooq · senior software engineer · full-stack &amp; platform · commerce / ticketing / fintech / ai ·
-                lahore · utc+5
+                umar farooq · solution architect &amp; senior software engineer · saas / ai-llm · lahore · utc+5
               </p>
               <p className="mt-4">
                 <span className="text-accent-bright">$</span> stack --daily

@@ -8,13 +8,11 @@ export function Work() {
         <div className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Selected work</p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-ink md:text-5xl">
-            Systems in production, with numbers that moved
+            Architecture and AI in production
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-            Featured: <span className="font-semibold text-ink">LuckyCharmGold</span>,{" "}
-            <span className="font-semibold text-ink">Direct To You Tickets</span>,{" "}
-            <span className="font-semibold text-ink">Greencard</span> — plus TheTutor.me, EventBuizz, ParkFlow,
-            Doocado, and DineHome.
+            Core case studies first: <span className="font-semibold text-ink">TheTutor.me</span>, EventBuizz, ParkFlow,
+            Doocado, DineHome — then recent platforms LuckyCharmGold, Direct To You Tickets, and Greencard.
           </p>
         </div>
 

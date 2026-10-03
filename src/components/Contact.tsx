@@ -10,9 +10,9 @@ export function Contact() {
           Let&apos;s build systems that survive production
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-          Marketplace commerce, ticketing ops, ACH rails, Laravel/Node backends, React/Vue admin surfaces, Redis/ES
-          performance, or production AI hooks. Based in Lahore (UTC+5), remote worldwide. I reply within a working day —
-          and I will say if I am not the right fit.
+          Solution architecture, multi-tenant SaaS, production AI/LLM features, Laravel scaling, or an honest review
+          before a rewrite. Based in Lahore (UTC+5), remote worldwide. I reply within a working day — and I will say if I
+          am not the right fit.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-3">

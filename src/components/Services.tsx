@@ -5,12 +5,13 @@ export function Services() {
     <section id="services" className="section-rule bg-paper-deep/40 px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">How I help</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">What I build</p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-ink md:text-5xl">
-            Four ways teams bring me in
+            AI systems and solution architecture
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-            Most engagements start with a look at the code that already exists—and the operators who depend on it.
+            Most engagements start with the architecture and the failure modes — then the AI and APIs that have to live
+            inside them.
           </p>
         </div>
 
