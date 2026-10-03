@@ -11,7 +11,8 @@ export function Work() {
             Systems in production, with numbers that moved
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-            Learning platforms, live events, airport parking SaaS, and multi-tenant food ordering—drawn from{" "}
+            TheTutor.me, EventBuizz, ParkFlow, <span className="font-semibold text-ink">Doocado</span>, and{" "}
+            <span className="font-semibold text-ink">DineHome</span>—live systems from{" "}
             <a href="https://contactumar.com/projects" className="text-accent underline-offset-2 hover:underline">
               contactumar.com
             </a>
