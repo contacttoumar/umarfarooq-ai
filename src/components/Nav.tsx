@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { profile } from "@/data/profile";
 
 const links = [
-  { href: "#fit", label: "Fit" },
+  { href: "#expertise", label: "Expertise" },
   { href: "#stack", label: "Problems" },
   { href: "#work", label: "Work" },
   { href: "#services", label: "Services" },
@@ -45,7 +45,7 @@ export function Nav() {
           href={`mailto:${profile.email}`}
           className="rounded-md bg-ink px-3.5 py-2 text-sm font-medium text-paper transition hover:bg-accent-deep"
         >
-          Hire me
+          Email me
         </a>
       </div>
     </header>

@@ -7,12 +7,11 @@ export function Contact() {
       <div className="relative mx-auto max-w-6xl">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Contact</p>
         <h2 className="mt-3 max-w-3xl font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-ink md:text-6xl">
-          Let&apos;s build systems that survive production
+          Talk to me about the hard part
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-          Solution architecture, multi-tenant SaaS, production AI/LLM features, Laravel scaling, or an honest review
-          before a rewrite. Based in Lahore, Pakistan (UTC+5) and available for remote work with teams anywhere. I reply within a working day, and I will say so
-          plainly if I am not the right fit.
+          Architecture questions, an AI feature that needs to hold up in production, or a system that is hurting under
+          load: send a short note about the problem. Lahore, Pakistan (UTC+5), working remotely.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-3">

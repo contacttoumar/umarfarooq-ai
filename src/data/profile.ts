@@ -32,57 +32,42 @@ export const stats = [
   { label: "With AI in the pipeline", value: "3" },
 ];
 
-export const fitCards = [
+export const expertise = [
   {
     code: "A",
-    audience: "Hiring for AI engineering",
-    headline: "Someone who has put LLM features inside systems that already make money.",
+    area: "Solution architecture",
+    headline: "Boundaries decided before the code is written.",
     points: [
-      "Support and broker copilots that read real order or inventory context",
-      "Fraud, anomaly and pricing signals scored inside the order pipeline, not a side dashboard",
-      "Retrieval, embeddings and prompts treated as product code: owned, budgeted, traced",
-      "A written fallback for every AI call, so a slow model never blocks checkout",
+      "Tenant isolation that holds across queries, queues, cache and retrieval",
+      "State machines for orders, inventory and payments, with one place that rejects illegal jumps",
+      "Idempotent writes and HMAC-signed webhooks with replay wherever money moves",
+      "ALB and auto scaling, read replicas, search cluster and queue workers sized to the traffic",
+      "Circuit breakers around payment and bank providers; shard-ready tables for orders and payments",
     ],
   },
   {
     code: "B",
-    audience: "Hiring for architecture",
-    headline: "Someone who decides the boundaries before the code gets written.",
+    area: "AI engineering",
+    headline: "LLM features that live inside the pipeline.",
     points: [
-      "Tenant isolation that holds across queries, queues, cache and retrieval",
-      "Idempotent writes and signed webhooks wherever money moves",
-      "Inventory and order state machines that survive concurrent users",
-      "Load-balanced AWS layouts with replicas, search and workers sized to the traffic",
+      "Support and broker copilots that read real order and inventory context",
+      "Fraud and anomaly scoring hooked into order creation as a scoring step",
+      "Price intelligence from market signals; demand forecasting by artist, venue and season",
+      "Semantic matching: embeddings plus structured filters to rank the best inventory",
+      "Per-call owner and budget, traces, and a deterministic fallback for every model call",
     ],
   },
   {
     code: "C",
-    audience: "Inheriting a live system",
-    headline: "Someone who changes it in slices while it keeps serving customers.",
+    area: "Reliability and performance",
+    headline: "Find the real cause, then fix only that.",
     points: [
-      "Profile first, then fix the actual cause instead of the usual suspect",
-      "Framework upgrades and monolith splits done one flow at a time",
-      "Documented release paths so the team ships without me online",
-      "Code review and handover treated as deliverables",
+      "Profiling before changing anything: on TheTutor.me the cost was repeated upstream calls, not the database",
+      "Redis caches with real invalidation and stampede protection on hot rate and catalog endpoints",
+      "Elasticsearch with fuzzy analyzers replacing LIKE queries that timed out",
+      "Async CSV import and reindex with failed-row reports and partial-commit safety",
+      "Legacy upgrades in slices: Laravel 4 to 8, monolith to microservices on live traffic",
     ],
-  },
-];
-
-export const firstThirtyDays = [
-  {
-    step: "Days 1 to 7",
-    title: "Map the system and its failure modes",
-    body: "Read the code paths that touch money, inventory and customer data. List what breaks first under load, retries or bad input.",
-  },
-  {
-    step: "Days 8 to 20",
-    title: "Ship one guarded win",
-    body: "A single high-value change behind a flag: an AI assist, a cache or lock, or an idempotency fix. Measured before and after.",
-  },
-  {
-    step: "Days 21 to 30",
-    title: "Instrument and hand over",
-    body: "Traces, alerts and a short runbook so the improvement keeps working after I step away, and the next one is easy to add.",
   },
 ];
 
@@ -462,74 +447,35 @@ export const skills = {
   Cloud: ["AWS ALB", "SQS", "S3 and CloudFront", "RDS", "CloudWatch", "CI/CD", "Docker"],
 };
 
-export const testimonials = [
-  {
-    quote:
-      "I started under Umar's mentorship at Hello World Technologies. He is profound, tackles hard problems, and would strengthen any team.",
-    name: "Sohail Idrees",
-    role: "Digital Growth Strategist, TIDE Digitalize",
-  },
-  {
-    quote:
-      "Five years alongside Umar. His work ethic, creativity under pressure, and full-stack skill in React, CodeIgniter, Laravel and Node stand out.",
-    name: "Zarttash Zafar",
-    role: "Software Engineer and Product Builder",
-  },
-  {
-    quote:
-      "Umar handles tough clients calmly. That patience helped us win and keep work throughout our journey.",
-    name: "Usman Ansari",
-    role: "Full Stack Developer",
-  },
-  {
-    quote:
-      "As a team lead he juggled several projects at once. Multitasking and delivery that deserve recognition.",
-    name: "Junaid Tahir",
-    role: "Project Manager, CSPO",
-  },
-  {
-    quote:
-      "Long-time colleague at Hello World. Outstanding at complex business logic, and a reliable team player.",
-    name: "Jahanzaib Ramzan",
-    role: "Senior Software Engineer",
-  },
-  {
-    quote:
-      "Umar's multitasking drove real growth for the company. I worked with him when he was senior to me.",
-    name: "Khawar Hussain",
-    role: "Senior Full-Stack Engineer",
-  },
-];
-
 export const principles = [
   {
     code: "01",
-    title: "Prove it on a thin slice of real data",
-    body: "An AI feature starts with one workflow and one measurement. It widens only after the numbers hold.",
+    title: "Model the failure before the feature",
+    body: "Before code, I draw the state machine and a failure table: what if this runs twice, late, concurrently, or never? Most production incidents are one of those four.",
   },
   {
     code: "02",
-    title: "Every model call has an owner",
-    body: "Who triggered it, which feature, what it may read, what it may spend. Cost and failure stop being anonymous.",
+    title: "Make every write safe to repeat",
+    body: "Idempotency keys on money and inventory writes, Redis dedupe windows, signed webhooks and an event ledger. At-least-once delivery, exactly-once effects.",
   },
   {
     code: "03",
-    title: "Isolate before you retrieve",
-    body: "Search, memory and caches follow the same boundaries as the database. A smart answer is a leak if it crossed one.",
+    title: "Measure, then change one thing",
+    body: "Profile with the real traffic shape, form one hypothesis, change it, benchmark before and after. That is how a slow API turned out to be duplicate upstream calls and not the database.",
   },
   {
     code: "04",
-    title: "Fix the cause, not the usual suspect",
-    body: "On TheTutor.me the slowdown was repeated upstream calls inside one request, not the database everyone blamed.",
+    title: "Ship in slices with a way back",
+    body: "Expand and contract migrations, feature flags, staged rollout and a rollback path. The old path keeps serving traffic until the new one has earned it.",
   },
   {
     code: "05",
-    title: "Change live systems in slices",
-    body: "Monolith splits and framework upgrades run one flow at a time while the old path still serves traffic.",
+    title: "AI gets the discipline of payments",
+    body: "Every model call has an owner, a scope, a budget, a timeout and a fallback. Traces and an eval set come first, so a prompt change can be proven and a bad answer replayed.",
   },
   {
     code: "06",
-    title: "Leave a runbook behind",
-    body: "If the release path lives in one person's head, it is not finished. Documentation is part of the deliverable.",
+    title: "Operate it, then document it",
+    body: "Alarms on checkout error rate, queue depth, Redis hit ratio and webhook success. A sandbox with forced failures, and a written release path from local to production.",
   },
 ];
