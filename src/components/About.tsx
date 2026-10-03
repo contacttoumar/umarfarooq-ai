@@ -40,7 +40,7 @@ export function About() {
                 <span className="text-accent-bright">$</span> whoami
               </p>
               <p className="mt-2 text-white/55">
-                umar farooq · solution architect &amp; senior software engineer · saas / ai-llm · lahore · utc+5
+                umar farooq · ai engineer &amp; solution architect · production llm systems · multi-tenant saas
               </p>
               <p className="mt-4">
                 <span className="text-accent-bright">$</span> stack --daily

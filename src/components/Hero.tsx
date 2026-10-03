@@ -54,7 +54,7 @@ export function Hero() {
         </div>
 
         <p className="mt-14 font-mono text-xs text-muted md:absolute md:bottom-10 md:left-8">
-          {profile.title} · {profile.location}
+          {profile.title} · {profile.availability}
         </p>
       </div>
     </section>

@@ -1,38 +1,88 @@
 export const profile = {
   name: "Umar Farooq",
-  title: "Solution Architect & Senior Software Engineer · AI/LLM",
+  title: "AI Engineer & Solution Architect",
   tagline:
-    "I design multi-tenant SaaS architecture and production AI systems that survive real traffic — RAG, LLM integrations, Laravel backends, and cloud infrastructure.",
-  location: "Lahore, Pakistan · UTC+5",
-  availability: "Open to senior, lead & architecture roles · Remote worldwide",
-  years: "8+",
-  projects: "8+",
+    "I take AI features from promising prototype to something a business can depend on: retrieval, copilots and scoring wired into platforms that already carry real traffic and real money.",
+  availability: "Open to AI engineering, architecture and lead roles",
   email: "umar7400@gmail.com",
-  phone: "",
   website: "https://contactumar.com",
   github: "https://github.com/contacttoumar",
   githubRepo: "https://github.com/contacttoumar/umarfarooq-ai",
   linkedin: "https://www.linkedin.com/in/contacttoumar",
-  resumeNote: "Solution Architect · Senior Software Engineer · AI/LLM",
+  resumeNote: "AI Engineer · Solution Architect · Senior Software Engineer",
   photo: "/images/umar-farooq.webp",
-  photoAlt: "Umar Farooq, Solution Architect & Senior Software Engineer",
-  bio: `I'm a Solution Architect and Senior Software Engineer based in Lahore with 8+ years building and scaling production software. Architecture-focused and AI-forward: multi-tenant SaaS, Laravel/API workloads under real traffic, RAG and LLM features that stay observable, reliable queues and integrations, and cloud infrastructure that does not surprise you on Friday. I ship full-stack when the product needs it — but the problems I care about live at the system and AI layer.`,
+  photoAlt: "Umar Farooq, AI Engineer and Solution Architect",
+  bio: `Eight years of shipping software for products that were already live, and increasingly the AI layer that goes on top of them. I design the architecture first (tenancy, queues, caching, search, deploy path) and then add LLM features that inherit those guarantees: scoped retrieval, per-call ownership, spend limits, traces and a fallback when the model is slow or wrong. Most of my reputation comes from fixing the unglamorous failures: double charges, double sells, stale prices, silent webhook retries.`,
   focus: [
+    "Production AI / LLM",
     "Solution architecture",
     "Multi-tenant SaaS",
-    "RAG · LLM · OpenAI",
     "Laravel · Node",
     "Redis · Elasticsearch",
     "AWS",
   ],
-  education: "Master's in Computer Science · The Islamia University of Bahawalpur",
+  education: "Master's in Computer Science, The Islamia University of Bahawalpur",
 };
 
 export const stats = [
-  { label: "Years experience", value: "8+" },
-  { label: "Concurrent users", value: "50K+" },
-  { label: "SaaS tenants / markets", value: "200+" },
-  { label: "Focus", value: "AI + Arch" },
+  { label: "Years in production", value: "8+" },
+  { label: "Peak concurrent users", value: "50K+" },
+  { label: "Platforms shipped", value: "8" },
+  { label: "With AI in the pipeline", value: "3" },
+];
+
+export const fitCards = [
+  {
+    code: "A",
+    audience: "Hiring for AI engineering",
+    headline: "Someone who has put LLM features inside systems that already make money.",
+    points: [
+      "Support and broker copilots that read real order or inventory context",
+      "Fraud, anomaly and pricing signals scored inside the order pipeline, not a side dashboard",
+      "Retrieval, embeddings and prompts treated as product code: owned, budgeted, traced",
+      "A written fallback for every AI call, so a slow model never blocks checkout",
+    ],
+  },
+  {
+    code: "B",
+    audience: "Hiring for architecture",
+    headline: "Someone who decides the boundaries before the code gets written.",
+    points: [
+      "Tenant isolation that holds across queries, queues, cache and retrieval",
+      "Idempotent writes and signed webhooks wherever money moves",
+      "Inventory and order state machines that survive concurrent users",
+      "Load-balanced AWS layouts with replicas, search and workers sized to the traffic",
+    ],
+  },
+  {
+    code: "C",
+    audience: "Inheriting a live system",
+    headline: "Someone who changes it in slices while it keeps serving customers.",
+    points: [
+      "Profile first, then fix the actual cause instead of the usual suspect",
+      "Framework upgrades and monolith splits done one flow at a time",
+      "Documented release paths so the team ships without me online",
+      "Code review and handover treated as deliverables",
+    ],
+  },
+];
+
+export const firstThirtyDays = [
+  {
+    step: "Days 1 to 7",
+    title: "Map the system and its failure modes",
+    body: "Read the code paths that touch money, inventory and customer data. List what breaks first under load, retries or bad input.",
+  },
+  {
+    step: "Days 8 to 20",
+    title: "Ship one guarded win",
+    body: "A single high-value change behind a flag: an AI assist, a cache or lock, or an idempotency fix. Measured before and after.",
+  },
+  {
+    step: "Days 21 to 30",
+    title: "Instrument and hand over",
+    body: "Traces, alerts and a short runbook so the improvement keeps working after I step away, and the next one is easy to add.",
+  },
 ];
 
 export type StackScenario = {
@@ -44,55 +94,64 @@ export type StackScenario = {
 
 export const stackScenarios: StackScenario[] = [
   {
-    id: "scale",
-    label: "Hold traffic without melting the API",
+    id: "ai-product",
+    label: "The AI demo works. Now it has to ship.",
     summary:
-      "Profile first. On TheTutor.me the pain was repeated third-party calls inside one request—not the database everyone blamed.",
+      "A prototype proves the idea. Production asks who called the model, what it cost, what it was allowed to see, and what happens when it fails.",
     pieces: [
-      { name: "Laravel middleware cache", why: "Request-scoped cache removes duplicate upstream hits without a TTL mess", tier: "core" },
-      { name: "MySQL indexing", why: "Confirm query plans after you stop guessing", tier: "data" },
-      { name: "Redis sessions", why: "Users stop pinning to one box so you can scale out", tier: "data" },
-      { name: "AWS horizontal scale", why: "Add machines for the next spike instead of buying a taller ceiling", tier: "edge" },
-      { name: "Load tests", why: "Know the concurrent-user number before production finds it", tier: "edge" },
+      { name: "Scoped retrieval", why: "Documents and memory obey the same boundaries as the database, so one customer never surfaces in another's answer", tier: "ai" },
+      { name: "Per-call ownership + budget", why: "Every model call carries who, which feature and a spend ceiling, so cost has an address", tier: "ai" },
+      { name: "Queue + retry policy", why: "Long prompts and flaky providers go through workers, never the web request", tier: "core" },
+      { name: "Traces and an eval set", why: "You can see a bad answer, replay it, and prove a prompt change helped", tier: "edge" },
+      { name: "Deterministic fallback", why: "A rule-based path takes over when the model is slow, wrong or down", tier: "core" },
     ],
   },
   {
-    id: "realtime",
-    label: "Ship live updates at an event",
+    id: "double-spend",
+    label: "Customers are charged or sold twice.",
     summary:
-      "Organisers change a schedule; attendees should see it without refreshing. Socket.IO alone is not enough once you run more than one process.",
+      "Retries, double clicks and two operators acting at once are normal. The system has to treat them as the default case.",
     pieces: [
-      { name: "Laravel domain API", why: "Keep admin and business rules where they already live", tier: "core" },
-      { name: "Socket.IO + Redis adapter", why: "Fan events across processes so every attendee hears the update", tier: "data" },
-      { name: "Next.js + React UI", why: "Real-time surfaces without a full rewrite of the back office", tier: "core" },
-      { name: "Redis pub/sub", why: "Cheap fan-out when sticky sessions would lie to you mid-event", tier: "data" },
-      { name: "Staging latency checks", why: "Measure update delay before the venue is full", tier: "edge" },
+      { name: "Idempotency keys", why: "A retried request returns the first result instead of creating a second order or charge", tier: "core" },
+      { name: "Redis holds with expiry", why: "A lot is reserved for a short window across every API node, then released automatically", tier: "data" },
+      { name: "State machine", why: "available, held, sold, fulfilled: illegal jumps are rejected in one place", tier: "core" },
+      { name: "Audit rows", why: "Disputes get an answer: who changed what, and when", tier: "edge" },
     ],
   },
   {
-    id: "saas",
-    label: "Build airport parking SaaS",
+    id: "slow-search",
+    label: "Search and catalog pages time out.",
     summary:
-      "Booking should feel like an app. Operators need live utilisation. Inertia keeps one codebase when nothing else will consume an API.",
+      "Slow browse pages usually come from LIKE queries, N+1 loads and cold caches, not from the database being too small.",
     pieces: [
-      { name: "Laravel + Inertia", why: "SPA feel without maintaining a separate API client forever", tier: "core" },
-      { name: "Vue.js", why: "Booking flow and operator dashboard in one stack", tier: "core" },
-      { name: "MySQL", why: "Availability, bookings, and revenue in one relational model", tier: "data" },
-      { name: "Analytics first", why: "Operators log in for utilisation and pricing truth—not polish", tier: "edge" },
-      { name: "Advance booking UX", why: "Travellers decide before they arrive at the curb", tier: "edge" },
+      { name: "Elasticsearch index", why: "Filters, fuzzy names and autocomplete leave MySQL entirely", tier: "data" },
+      { name: "Redis cache with real invalidation", why: "Hot rates and fragments refresh the moment an admin changes them", tier: "data" },
+      { name: "Read replicas", why: "Reporting and browse traffic stop competing with writes", tier: "data" },
+      { name: "Async reindex", why: "Imports and updates reach the index through a queue, not a page request", tier: "core" },
     ],
   },
   {
-    id: "ai",
-    label: "Add AI to a product that already has users",
+    id: "webhooks",
+    label: "Webhooks arrive twice, late or out of order.",
     summary:
-      "Support assistants, document RAG, and agents that call internal tools—with evaluation, not just a chat demo.",
+      "Providers deliver at least once. Your side has to make the effect happen exactly once, whatever the delivery does.",
     pieces: [
-      { name: "OpenAI / Claude APIs", why: "Model layer you can swap; product logic stays yours", tier: "ai" },
-      { name: "LangChain (Python)", why: "Retrieval and tool-calling pipelines beside Laravel", tier: "ai" },
-      { name: "Langfuse", why: "Tracing and evaluation from the first production call", tier: "ai" },
-      { name: "Queued jobs", why: "Fat pastes and retries never block web workers", tier: "core" },
-      { name: "Scoped retrieval", why: "Documents respect the same tenancy rules as the rest of the app", tier: "data" },
+      { name: "Signature verification", why: "Reject anything that is not signed by the provider or by you", tier: "core" },
+      { name: "Event ledger", why: "Every event id is stored, so a duplicate is recognised and ignored", tier: "data" },
+      { name: "Replay tooling", why: "Support can safely re-run a failed event from a dashboard", tier: "edge" },
+      { name: "Circuit breakers", why: "One provider outage degrades a feature instead of the whole checkout", tier: "core" },
+    ],
+  },
+  {
+    id: "tenancy",
+    label: "Many customers share one codebase.",
+    summary:
+      "Tenancy is a property of the whole system. A scoped query is one layer; queues, cache, files and AI context need the same rule.",
+    pieces: [
+      { name: "Scoped data access", why: "Every read and write passes through a tenant-aware layer that is hard to bypass", tier: "core" },
+      { name: "Tenant-aware queues and cache", why: "One noisy tenant cannot starve or leak into another", tier: "data" },
+      { name: "Per-tenant branding and config", why: "One deployment, many identities", tier: "core" },
+      { name: "Isolation tests", why: "A canary tenant tries to reach another's data on every release", tier: "edge" },
     ],
   },
 ];
@@ -100,151 +159,200 @@ export const stackScenarios: StackScenario[] = [
 export const services = [
   {
     code: "01",
-    title: "AI & LLM systems",
+    title: "AI features inside real products",
     blurb:
-      "Production AI beyond the basic API call — RAG, embeddings, streaming UX, cost controls, and features that stay maintainable after the prototype.",
+      "Copilots, retrieval and scoring that live in your existing workflow and respect its rules, instead of a chat window bolted on the side.",
     points: [
-      "RAG / semantic retrieval and support copilots",
-      "OpenAI & Claude integrations with retries and queues",
-      "Fraud, pricing, and demand AI hooks in real pipelines",
-      "Tracing, evaluation, and per-feature cost awareness",
+      "Support and operator copilots with order or inventory context",
+      "Semantic matching from a customer request to the right item",
+      "Fraud, anomaly and price-suggestion signals inside the pipeline",
+      "Traces, eval sets, spend limits and fallbacks from the first release",
     ],
-    stack: ["OpenAI", "Claude", "LangChain", "RAG", "Langfuse"],
+    stack: ["OpenAI", "Claude", "LangChain", "Embeddings", "Langfuse"],
   },
   {
     code: "02",
-    title: "Solution architecture & multi-tenancy",
+    title: "Solution architecture",
     blurb:
-      "SaaS architecture decisions that affect hundreds of customers on one codebase — isolation, billing, queues, and observability.",
+      "The structural decisions that are cheap now and expensive later: tenancy, state, queues, search and the deploy path.",
     points: [
-      "Tenant isolation and tenant-scoped data models",
-      "Tenant-aware queues, cache, and authorization",
-      "Subscription / billing architecture (Stripe patterns)",
-      "Migrations, audit trails, and admin tooling at scale",
+      "Tenant isolation across data, jobs, cache and AI context",
+      "State machines for orders, inventory and payments",
+      "Service boundaries and API contracts across multiple repos",
+      "Architecture reviews before a rewrite is approved",
     ],
-    stack: ["Laravel", "PostgreSQL", "MySQL", "Redis", "SaaS"],
+    stack: ["Laravel", "Node.js", "MySQL", "Redis", "AWS"],
   },
   {
     code: "03",
-    title: "Performance & scalable backends",
+    title: "Performance and reliability",
     blurb:
-      "Laravel and API workloads under real traffic — caching, search, load balancing, and measurement-first performance work.",
+      "Measured fixes for the slow and fragile parts: the request path, the catalog, the worker queue, the webhook handler.",
     points: [
-      "Query profiling and N+1 elimination",
-      "Redis + Elasticsearch hot paths",
-      "AWS ALB, replicas, and autoscaling patterns",
-      "WebSockets, queues, and event-driven workflows",
+      "Profiling that finds the real bottleneck first",
+      "Redis and Elasticsearch on the hot paths",
+      "Load-balanced AWS layouts with replicas and workers",
+      "Idempotency, locks and retries for money-moving flows",
     ],
-    stack: ["Laravel", "Node.js", "Redis", "Elasticsearch", "AWS"],
+    stack: ["Redis", "Elasticsearch", "SQS", "ALB", "CloudWatch"],
   },
   {
     code: "04",
-    title: "Full-stack product engineering",
+    title: "Delivery and team lift",
     blurb:
-      "Architecture that ships — React/Vue/Next surfaces beside Laravel and Node APIs, with deploy paths the team can own.",
+      "Full-stack delivery with the habits that make a team faster: review, documentation and releases that do not depend on one person.",
     points: [
-      "Vue / Inertia / React / Next.js product UIs",
-      "REST APIs, webhooks, and integrations",
-      "Real-time UX and admin tooling",
-      "Documented release paths and architecture reviews",
+      "React, Vue, Next.js and Inertia surfaces beside Laravel or Node APIs",
+      "Code review standards and a written release path",
+      "Legacy upgrades in slices on live traffic",
+      "Mentoring and handover as part of the engagement",
     ],
-    stack: ["React", "Vue", "Next.js", "Laravel", "Node.js"],
+    stack: ["React", "Vue", "Next.js", "Laravel", "Git"],
   },
 ];
 
-export const projects = [
+export type Project = {
+  id: string;
+  group: "core" | "recent";
+  company: string;
+  title: string;
+  role: string;
+  problem: string;
+  fix: string;
+  ai?: string;
+  outcome: string;
+  stack: string[];
+  image: string;
+  href: string;
+};
+
+export const projects: Project[] = [
   {
-    id: "001",
-    year: "Production",
-    role: "Senior Laravel Developer",
+    id: "01",
+    group: "core",
     company: "TheTutor.me",
-    title: "TheTutor.me learning platform",
-    summary:
-      "High-concurrency EdTech on Laravel and AWS — 50,000+ concurrent users. Request-scoped caching of third-party calls cut API time ~25%; course completion rose ~40% on the client's analytics.",
-    stack: ["Laravel", "PHP", "AWS", "MySQL", "Architecture"],
+    title: "Learning platform built for 50,000+ concurrent users",
+    role: "Senior Laravel Developer",
+    problem:
+      "Traffic outgrew the platform and the API slowed under load. Everyone suspected the database; nobody had traced it.",
+    fix:
+      "Profiling showed the same third-party endpoints being called several times inside one request. A request-scoped cache in middleware removed the duplicates. Sessions moved off the app box so machines could be added horizontally on AWS.",
+    outcome:
+      "Held 50,000+ concurrent users. API about 25% faster in my own before/after benchmark; course completion up roughly 40% on the client's analytics.",
+    stack: ["Laravel", "PHP", "AWS", "MySQL", "REST"],
     image: "/images/cover-thetutor-me.svg",
     href: "https://contactumar.com/projects/thetutor-me",
   },
   {
-    id: "002",
-    year: "Production",
-    role: "Senior Developer",
+    id: "02",
+    group: "core",
     company: "EventBuizz",
-    title: "EventBuizz real-time events",
-    summary:
-      "Enterprise event platform with Laravel back office and Next.js/React tracking. Socket.IO + Redis adapter for live schedule updates — engagement up ~30%.",
+    title: "Real-time event platform",
+    role: "Senior Developer",
+    problem:
+      "Attendees and organisers only saw schedule changes after a refresh, which at a live event is already too late.",
+    fix:
+      "Socket.IO for live updates with a Redis adapter, so an update on one process reaches clients connected to every other. Laravel kept the domain and administration; Next.js and React drive the live surface.",
+    outcome:
+      "Engagement up about 30% (client analytics); real-time update latency down roughly 25% and event processing about 20% faster in staging.",
     stack: ["Laravel", "Next.js", "React", "Socket.IO", "Redis"],
     image: "/images/cover-eventbuizz.svg",
     href: "https://contactumar.com/projects/eventbuizz",
   },
   {
-    id: "003",
-    year: "Production",
-    role: "Senior Developer",
+    id: "03",
+    group: "core",
     company: "ParkFlow",
-    title: "ParkFlow airport parking SaaS",
-    summary:
-      "SaaS architecture with Vue + Inertia over Laravel: advance booking, live availability, operator revenue analytics. Pre-booking and revenue lifted ~25–30% per client reports.",
-    stack: ["Vue.js", "Inertia", "Laravel", "MySQL", "SaaS"],
+    title: "Airport parking SaaS",
+    role: "Senior Developer",
+    problem:
+      "Travellers could not tell if parking would be free before arriving, and operators priced spaces without a live view of occupancy or revenue.",
+    fix:
+      "Vue with Inertia on Laravel, so booking feels like an app without maintaining a second API codebase. The operator analytics dashboard was built before the booking polish because it was the screen operators logged in for.",
+    outcome:
+      "Booking about 25% faster (staging); pre-booking up roughly 30% and operator revenue up about 25%, as reported by the client.",
+    stack: ["Vue.js", "Inertia", "Laravel", "MySQL"],
     image: "/images/cover-parkflow.svg",
     href: "https://contactumar.com/projects/parkflow",
   },
   {
-    id: "004",
-    year: "Production",
-    role: "Development Lead",
+    id: "04",
+    group: "core",
     company: "Doocado",
-    title: "Doocado multi-tenant food ordering",
-    summary:
-      "Multi-tenant SaaS for restaurant brands across USA, Mexico, and Brazil — shared infra, tenant-scoped data and branding, sales reporting. Isolation as an architecture concern, not only a column.",
+    title: "Multi-tenant restaurant ordering",
+    role: "Development Lead",
+    problem:
+      "Restaurant owners in three countries each needed their own branded ordering system, without a separate deployment per restaurant.",
+    fix:
+      "One multi-tenant Laravel application with tenant-scoped data and branding, server architecture configured for shared infrastructure, and built-in sales analytics. Every query is scoped, because one wrong join would show one restaurant another's orders.",
+    outcome: "Live across the USA, Mexico and Brazil with sales reporting for operators.",
     stack: ["Laravel", "PHP", "MySQL", "Multi-tenancy"],
     image: "/images/cover-doocado.svg",
     href: "https://contactumar.com/projects/doocado",
   },
   {
-    id: "005",
-    year: "Production",
-    role: "Lead Developer",
+    id: "05",
+    group: "core",
     company: "DineHome",
-    title: "DineHome Norway delivery platform",
-    summary:
-      "Food ordering and delivery for the Norwegian market. Laravel with payment-gateway and CMS integrations, plus a written Git release path: local → development → staging → production.",
+    title: "Food ordering and delivery platform",
+    role: "Lead Developer",
+    problem:
+      "Payments and content management had to be integrated, and releases depended on one person being at their desk.",
+    fix:
+      "Payment gateway and CMS integration with attention to failure paths, plus a written deployment route from local through development and staging to production over Git.",
+    outcome: "Running in the Norwegian market with a documented release process instead of ad-hoc deploys.",
     stack: ["Laravel", "PHP", "MySQL", "Payments", "CMS"],
     image: "/images/cover-dinehome.svg",
     href: "https://contactumar.com/projects/dinehome",
   },
   {
-    id: "006",
-    year: "Recent",
-    role: "Full-stack engineer",
+    id: "06",
+    group: "recent",
     company: "LuckyCharmGold",
-    title: "LuckyCharmGold AI commerce marketplace",
-    summary:
-      "React.js storefront with AI pricing/fraud copilots, Redis + Elasticsearch catalog, AWS ALB. Checkout conversion +41%; catalog p95 1.8s → 220ms.",
-    stack: ["React.js", "Node.js", "Redis", "Elasticsearch", "OpenAI", "AWS"],
+    title: "Digital marketplace with AI pricing and fraud scoring",
+    role: "Full-stack engineer",
+    problem:
+      "Sale-day spikes, prices drifting from the market, orders marked unpaid after payment, and exposure on high-risk payout methods, all on a catalog that browsed slowly.",
+    fix:
+      "React storefront over APIs; idempotent order creation and payment confirmation; a Redis rate cache refreshed when admins change rates; Elasticsearch for catalog search; ALB with auto scaling and SQS workers for pricing, email and loyalty.",
+    ai:
+      "Support copilot for agents with order context, price-suggestion signals from market data, and anomaly scoring hooked into the order pipeline.",
+    outcome:
+      "Checkout races closed, catalog and rate refresh moved off the database hot path, and loyalty recalculation made safe across refunds.",
+    stack: ["React", "Node.js", "Redis", "Elasticsearch", "AWS", "OpenAI"],
     image: "/images/cover-luckycharmgold.svg",
     href: "https://luckycharmgold.com/",
   },
   {
-    id: "007",
-    year: "Recent",
-    role: "Full-stack engineer",
+    id: "07",
+    group: "recent",
     company: "Direct To You Tickets",
-    title: "Direct To You Tickets ops platform",
-    summary:
-      "Vue.js admin + Node services with Redis holds and AI demand/pricing match. Time-to-match ↓70%; Elasticsearch search p95 ~2.5s → ~180ms.",
-    stack: ["Vue.js", "React.js", "Node.js", "Redis", "Elasticsearch", "AI"],
+    title: "Broker operations platform with AI matching",
+    role: "Full-stack engineer",
+    problem:
+      "Brokers ran on spreadsheets and chat: two people could sell the same lot, search crawled across thousands of listings, and imports timed out.",
+    fix:
+      "Vue admin with role-based access; an inventory state machine; Redis holds with expiry across load-balanced API nodes; Elasticsearch search with fuzzy artist and event names; queued CSV import and reindex.",
+    ai:
+      "Demand forecasting, price suggestions per section, semantic match from a customer request to the best inventory, and a reply assistant for brokers.",
+    outcome:
+      "Double-sell path closed, broker search fast enough to use mid-call, and large imports run in the background with a failed-row report.",
+    stack: ["Vue.js", "React", "Node.js", "Redis", "Elasticsearch", "AI"],
     image: "/images/cover-dtyt.svg",
     href: "https://directtoyoutickets.com/",
   },
   {
-    id: "008",
-    year: "Recent",
-    role: "Platform engineer",
+    id: "08",
+    group: "recent",
     company: "Greencard",
-    title: "Greencard ACH payment ecosystem",
-    summary:
-      "Multi-repo payment architecture: Laravel core, Node agent API, React/Vue panels, WooCommerce plugin. Idempotent ACH, HMAC webhooks, Redis locks — regulated pay-by-bank across 50 U.S. states.",
+    title: "Pay-by-bank (ACH) platform across five codebases",
+    role: "Platform engineer",
+    problem:
+      "Regulated merchants needed bank payments through several surfaces at once: a core app, an API, a WooCommerce store, an invoice page and an admin panel, with webhooks that could not double-process.",
+    fix:
+      "Laravel core for merchants, invoices and settlements; a Node API for payments and bank-link sessions; idempotency keys on every write; HMAC-signed webhooks with replay; Redis locks against double-pay; a sandbox with forced return codes.",
+    outcome:
+      "Merchants connect through a drop-in WooCommerce gateway or the API, customers pay invoices on a mobile-first page, and duplicate-event and double-pay paths are closed.",
     stack: ["Laravel", "Node.js", "React", "Vue.js", "WooCommerce", "AWS"],
     image: "/images/cover-greencard.svg",
     href: "https://paygreencard.com/",
@@ -253,58 +361,54 @@ export const projects = [
 
 export const experience = [
   {
-    period: "Oct 2024 — Present",
+    period: "Oct 2024 to Present",
     role: "Senior Software Engineer",
     org: "Wanological Solutions",
-    place: "Lahore, Pakistan",
-    focus: "Secure Laravel platforms, legacy modularisation, LLM features, ~40% faster data processing via diagnostics",
+    focus:
+      "Modularised legacy Laravel codebases, added automated diagnostics (about 40% faster data processing) and built LLM features: retrieval over internal documents and agents that call internal tools.",
   },
   {
-    period: "Aug 2023 — Sep 2024",
+    period: "Aug 2023 to Sep 2024",
     role: "Senior Laravel Developer",
     org: "BitClans IT Solutions",
-    place: "Lahore, Pakistan",
-    focus: "End-to-end Laravel delivery, code review ownership, Vue.js fronts",
+    focus: "End-to-end Laravel delivery with ownership of code review, testing and release quality for the team.",
   },
   {
-    period: "Feb 2022 — Dec 2022",
+    period: "Feb 2022 to Dec 2022",
     role: "Senior PHP Developer",
     org: "In All Media",
-    place: "Remote",
-    focus: "Laravel 4→8 migration (60% in Q1), Next.js + React Native features",
+    focus: "Laravel 4 to 8 migration (60% complete in the first quarter) and Next.js and React Native features.",
   },
   {
-    period: "Jun 2018 — Feb 2022",
+    period: "Jun 2018 to Feb 2022",
     role: "Senior Web Developer",
     org: "Hello World Technologies",
-    place: "Rahim Yar Khan, Pakistan",
-    focus: "Laravel APIs, monolith→microservices (~30% less downtime), CodeIgniter",
+    focus: "Laravel APIs, a monolith to microservices migration (downtime down about 30%) and CodeIgniter work.",
   },
 ];
 
 export const skills = {
-  backend: [
-    "PHP",
-    "Laravel",
-    "Node.js",
-    "REST APIs",
-    "Webhooks",
-    "Queues / workers",
-    "Idempotency",
-    "WooCommerce",
+  "AI / LLM": [
+    "OpenAI API",
+    "Anthropic Claude",
+    "LangChain",
+    "RAG and embeddings",
+    "Langfuse tracing",
+    "Copilots and scoring hooks",
+    "Prompting for product features",
   ],
-  frontend: ["React.js", "Vue.js", "Next.js", "Inertia.js", "TypeScript", "Admin SPAs", "Real-time UX"],
-  data: ["MySQL / RDS", "Redis locks & cache", "Elasticsearch / OpenSearch", "Read replicas", "Socket.IO"],
-  ai: ["OpenAI", "Claude", "LangChain", "RAG / embeddings", "Fraud & pricing hooks", "Support copilots"],
-  ops: ["AWS ALB", "SQS", "CloudFront", "S3", "ElastiCache", "CloudWatch", "CI/CD", "WAF"],
-  architecture: [
-    "Microservices boundaries",
+  Architecture: [
     "Multi-tenancy",
-    "Payment rails",
-    "Inventory state machines",
+    "State machines",
+    "Idempotency and webhooks",
+    "Microservice boundaries",
+    "API contracts",
     "Observability",
-    "Reliability",
   ],
+  Backend: ["PHP", "Laravel", "Node.js", "CodeIgniter", "REST", "Queues and workers", "WooCommerce"],
+  Frontend: ["React", "Vue", "Next.js", "Inertia", "TypeScript", "Admin SPAs", "Real-time UX"],
+  Data: ["MySQL", "Redis", "Elasticsearch / OpenSearch", "Read replicas", "Socket.IO"],
+  Cloud: ["AWS ALB", "SQS", "S3 and CloudFront", "RDS", "CloudWatch", "CI/CD", "Docker"],
 };
 
 export const testimonials = [
@@ -312,13 +416,13 @@ export const testimonials = [
     quote:
       "I started under Umar's mentorship at Hello World Technologies. He is profound, tackles hard problems, and would strengthen any team.",
     name: "Sohail Idrees",
-    role: "Digital Growth Strategist · TIDE Digitalize",
+    role: "Digital Growth Strategist, TIDE Digitalize",
   },
   {
     quote:
-      "Five years alongside Umar. His work ethic, creativity under pressure, and full-stack skill in React, CodeIgniter, Laravel, and Node stand out.",
+      "Five years alongside Umar. His work ethic, creativity under pressure, and full-stack skill in React, CodeIgniter, Laravel and Node stand out.",
     name: "Zarttash Zafar",
-    role: "Software Engineer & Product Builder",
+    role: "Software Engineer and Product Builder",
   },
   {
     quote:
@@ -330,7 +434,7 @@ export const testimonials = [
     quote:
       "As a team lead he juggled several projects at once. Multitasking and delivery that deserve recognition.",
     name: "Junaid Tahir",
-    role: "Project Manager, CSPO®",
+    role: "Project Manager, CSPO",
   },
   {
     quote:
@@ -349,32 +453,32 @@ export const testimonials = [
 export const principles = [
   {
     code: "01",
-    title: "Simplicity before cleverness",
-    body: "Architecture should make the safe path the easy path. Clever abstractions earn their keep — they are not the default.",
+    title: "Prove it on a thin slice of real data",
+    body: "An AI feature starts with one workflow and one measurement. It widens only after the numbers hold.",
   },
   {
     code: "02",
-    title: "Multi-tenancy is architecture",
-    body: "Not only a tenant_id column. Isolation must hold across queries, queues, cache, AI retrieval, and admin tooling.",
+    title: "Every model call has an owner",
+    body: "Who triggered it, which feature, what it may read, what it may spend. Cost and failure stop being anonymous.",
   },
   {
     code: "03",
-    title: "AI needs evaluation, budgets, failure modes",
-    body: "Prompts alone are not a product. Production LLM features need traces, spend controls, retries, and scoped data.",
+    title: "Isolate before you retrieve",
+    body: "Search, memory and caches follow the same boundaries as the database. A smart answer is a leak if it crossed one.",
   },
   {
     code: "04",
-    title: "Observability is part of the feature",
-    body: "If you cannot see p95, queue lag, and webhook failure ratio, you do not own the system yet.",
+    title: "Fix the cause, not the usual suspect",
+    body: "On TheTutor.me the slowdown was repeated upstream calls inside one request, not the database everyone blamed.",
   },
   {
     code: "05",
-    title: "Performance starts with measurement",
-    body: "Profile before proposing. On TheTutor.me the slowdown was repeated third-party calls — not the database everyone blamed.",
+    title: "Change live systems in slices",
+    body: "Monolith splits and framework upgrades run one flow at a time while the old path still serves traffic.",
   },
   {
     code: "06",
-    title: "Good architecture makes future changes boring",
-    body: "Frameworks change quickly. Boundaries, idempotency, and documented deploy paths usually do not.",
+    title: "Leave a runbook behind",
+    body: "If the release path lives in one person's head, it is not finished. Documentation is part of the deliverable.",
   },
 ];

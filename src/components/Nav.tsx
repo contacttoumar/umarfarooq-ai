@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { profile } from "@/data/profile";
 
 const links = [
-  { href: "#stack", label: "Stack" },
+  { href: "#fit", label: "Fit" },
+  { href: "#stack", label: "Problems" },
   { href: "#work", label: "Work" },
   { href: "#services", label: "Services" },
   { href: "#experience", label: "Experience" },

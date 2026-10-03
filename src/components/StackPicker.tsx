@@ -19,12 +19,12 @@ export function StackPicker() {
     <section id="stack" className="section-rule bg-paper px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Stack judgment</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Problem → fix</p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-ink md:text-5xl">
-            What I reach for, when
+            The problem you have. The stack I would use.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-            Pick a scenario. You get the stack I would actually ship—and one line on why each piece earns its seat.
+            Pick a situation you may recognise. You get the fix I would actually ship, with one line on why each piece earns its place.
           </p>
         </div>
 

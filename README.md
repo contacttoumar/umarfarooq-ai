@@ -1,17 +1,17 @@
 # umarfarooq-ai
 
-**Umar Farooq** — Senior Software Engineer · Full-Stack & Platform  
+**Umar Farooq** — AI Engineer & Solution Architect  
 GitHub: [contacttoumar](https://github.com/contacttoumar) · Repo: [umarfarooq-ai](https://github.com/contacttoumar/umarfarooq-ai)
 
-Professional portfolio template + GitHub profile README. Structured like a senior engineering dossier: problem-solving, production impact, full stack coverage, and clear ways to work together.
+A portfolio site plus a GitHub profile README. Both lead with production AI and solution architecture, show each project as problem → fix → outcome, and spell out how Umar can help a hiring team.
 
 ## Contents
 
 | Path | Purpose |
 |---|---|
-| `src/` | Next.js portfolio site |
-| `github-profile/README.md` | Copy into `contacttoumar/contacttoumar` for GitHub profile home |
-| `src/data/profile.ts` | All copy, projects, stack, services |
+| `src/` | Next.js portfolio site (Next 16, React 19, Tailwind 4) |
+| `src/data/profile.ts` | All copy: profile, fit cards, problem → fix scenarios, projects, skills, experience |
+| `github-profile/README.md` | Copy into `contacttoumar/contacttoumar` for the GitHub profile home |
 
 ## Run
 
@@ -20,7 +20,11 @@ npm install
 npm run dev
 ```
 
-→ [http://127.0.0.1:4321](http://127.0.0.1:4321)
+Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
+
+```bash
+npm run build && npm start
+```
 
 ## Publish
 
@@ -29,8 +33,9 @@ git remote add github https://github.com/contacttoumar/umarfarooq-ai.git
 git push -u github main
 ```
 
-Profile home: paste `github-profile/README.md` into repo **`contacttoumar/contacttoumar`**.
+Profile home: paste `github-profile/README.md` into the repo **`contacttoumar/contacttoumar`**.
 
-## Positioning
+## Content notes
 
-Senior Software Engineer · Full-Stack & Platform · Commerce · Ticketing · Fintech · Laravel · React/Vue · Node · Redis · Elasticsearch · AWS · AI/LLM
+- No location is published anywhere in the site or the profile README.
+- Metrics are limited to numbers published on contactumar.com, client-reported figures, or staging benchmarks, and are labelled as such. Projects 06 to 08 describe results qualitatively until measured numbers exist; add them in `src/data/profile.ts` when you have them.

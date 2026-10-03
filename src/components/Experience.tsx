@@ -25,7 +25,7 @@ export function Experience() {
               <div>
                 <div className="font-semibold text-ink">{item.role}</div>
                 <div className="mt-1 text-sm text-ink-soft">
-                  {item.org} · {item.place}
+                  {item.org}
                 </div>
               </div>
               <div className="text-sm leading-relaxed text-muted">{item.focus}</div>

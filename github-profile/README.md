@@ -1,14 +1,15 @@
 <div align="center">
 
 # Umar Farooq
-### Solution Architect & Senior Software Engineer
-**Production SaaS · AI/LLM Systems · Multi-Tenant Architecture · Laravel · Vue/React · AWS**
+### AI Engineer & Solution Architect
 
-I design and ship software that has to survive real users, real traffic, and real failure modes — from **50K+ concurrent-user** platforms and **multi-tenant SaaS** to **RAG pipelines**, **LLM integrations**, real-time applications, and cloud infrastructure.
+**I put LLM features inside live products, and design the systems underneath so they hold up.**
+
+Retrieval, copilots and scoring for platforms that already carry real traffic and real money. Architecture first, then AI that inherits its guarantees.
 
 [Portfolio](https://contactumar.com) · [`umarfarooq-ai`](https://github.com/contacttoumar/umarfarooq-ai) · [LinkedIn](https://www.linkedin.com/in/contacttoumar) · [Email](mailto:umar7400@gmail.com)
 
-**8+ Years Experience** · **50K+ Concurrent Users** · **200+ SaaS Tenants / Markets** · **Lahore, Pakistan · UTC+5**
+**8+ years shipping** · **50K+ concurrent users handled** · **8 platforms delivered** · **Open to AI engineering, architecture and lead roles**
 
 <img src="https://komarev.com/ghpvc/?username=contacttoumar&label=Profile%20views&color=0f766e&style=flat" alt="profile views" />
 
@@ -16,167 +17,149 @@ I design and ship software that has to survive real users, real traffic, and rea
 
 ---
 
-## About me
+## In one minute
 
-I'm a **Solution Architect** and **Senior Software Engineer** based in Lahore, Pakistan, with **8+ years** of experience building and scaling production software for remote product teams.
-
-My background is **architecture-focused and AI-forward**. I work across the full product stack when necessary, but the problems I care most about live at the system level:
-
-- designing **multi-tenant SaaS architecture**  
-- scaling **Laravel and API workloads** under real traffic  
-- building **AI and LLM features that survive production**  
-- designing reliable REST APIs, background jobs, queues, and integrations  
-- building **real-time systems** with WebSockets, Redis, and event-driven workflows  
-- improving observability, performance, security, and cloud infrastructure  
-- turning complex product requirements into maintainable systems  
-
-Today, much of my engineering focus sits at the intersection of **SaaS architecture and AI infrastructure**: RAG, Claude and OpenAI integrations, embeddings, streaming AI interfaces, multi-tenant isolation, LLM observability, evaluation, and cost controls.
-
-I care less about making the AI demo work and more about what happens when thousands of users start using it.
+- **AI that ships.** Support copilots, semantic matching, price and fraud signals, wired into order pipelines with budgets, traces and fallbacks.
+- **Architecture that holds.** Multi-tenancy, idempotent payments, signed webhooks, inventory state machines, load-balanced AWS.
+- **Fixes that find the real cause.** Profile first. On TheTutor.me the slowdown was repeated upstream calls inside one request, not the database everyone blamed.
+- **Delivery that leaves a team stronger.** Reviews, runbooks and release paths that work when I am offline.
 
 ---
 
-## What I build
+## How I can help you
 
-### AI & LLM systems
-Production AI features beyond the basic API call:
+### Hiring for AI engineering?
+You want someone who has put LLM features inside systems that already make money.
 
-- Retrieval-Augmented Generation (RAG)  
-- embeddings and semantic retrieval  
-- Claude API and OpenAI API integrations  
-- streaming LLM responses  
-- prompt engineering for product features  
-- AI usage and token-cost attribution  
-- retries, queues, fallbacks, and graceful degradation  
-- multi-tenant AI data isolation  
-- evaluation and regression-minded rollout  
-- support / pricing / fraud copilots wired into real pipelines  
+- Support and broker copilots that read real order or inventory context
+- Fraud, anomaly and pricing signals scored inside the order pipeline, not on a side dashboard
+- Retrieval, embeddings and prompts treated as product code: owned, budgeted, traced
+- A written fallback for every AI call, so a slow model never blocks checkout
 
-### SaaS architecture & multi-tenancy
-Platforms where architecture decisions affect hundreds of customers sharing one application:
+### Hiring for architecture?
+You want someone who decides the boundaries before the code is written.
 
-- tenant isolation strategies  
-- tenant-aware data modelling, queries, and authorization  
-- tenant-aware queues, cache, and background jobs  
-- subscription and billing architecture  
-- permissions and administration tooling  
-- database migrations at scale  
-- observability and audit trails  
+- Tenant isolation that holds across queries, queues, cache and retrieval
+- Idempotent writes and signed webhooks wherever money moves
+- Inventory and order state machines that survive concurrent users
+- Load-balanced AWS layouts with replicas, search and workers sized to the traffic
 
-### Performance & scalable backends
-Laravel · PHP · Node.js · PostgreSQL · MySQL · Redis · Elasticsearch · AWS · REST APIs · Queues · Caching · WebSockets
+### Inheriting a live system?
+You want someone who changes it in slices while it keeps serving customers.
 
-Systems from early-stage SaaS to platforms supporting **50,000+ concurrent users**.
+- Profile first, then fix the actual cause instead of the usual suspect
+- Framework upgrades and monolith splits, one flow at a time
+- Documented release paths so the team ships without me online
+- Code review and handover treated as deliverables
 
-### Full-stack product engineering
-Vue.js · React · Next.js · Inertia.js · JavaScript/TypeScript · Laravel · Node.js · real-time UX
+### My first 30 days with a team
 
-Close enough to the product to understand the user problem — deep enough into the backend to make sure the system can support it.
-
----
-
-## Production impact
-
-| System | Engineering challenge | Impact |
-|---|---|---|
-| **[TheTutor.me](https://contactumar.com/projects/thetutor-me)** | High-concurrency EdTech, Laravel APIs, AWS scaling | **50K+** concurrent users · API ~**25%** faster |
-| **[EventBuizz](https://contactumar.com/projects/eventbuizz)** | Enterprise events, real-time Socket.IO + Redis | Engagement **+~30%** |
-| **[ParkFlow](https://contactumar.com/projects/parkflow)** | Airport parking SaaS (Vue + Inertia + Laravel) | Pre-booking / revenue ~**25–30%** (client) |
-| **[Doocado](https://contactumar.com/projects/doocado)** | Multi-tenant restaurant SaaS | **US / MX / BR** · tenant isolation |
-| **[DineHome](https://contactumar.com/projects/dinehome)** | Delivery platform + payments + release path | Norway market · documented deploys |
-| **[LuckyCharmGold](https://luckycharmgold.com/)** | AI commerce, Redis/ES, ALB | Checkout **+41%** · search p95 **1.8s → 220ms** |
-| **[Direct To You Tickets](https://directtoyoutickets.com/)** | Inventory locks + AI demand/pricing | Time-to-match **↓70%** |
-| **[Greencard](https://paygreencard.com/)** | Multi-repo ACH architecture | Idempotent payments · HMAC webhooks |
-
-➡️ Template repo: [`contacttoumar/umarfarooq-ai`](https://github.com/contacttoumar/umarfarooq-ai) · Live: [contactumar.com](https://contactumar.com)
-
----
-
-## Current engineering focus
-
-```text
-production-ai/
-├── rag-and-retrieval
-├── llm-observability
-├── multi-tenant-isolation
-├── cost-and-usage-controls
-├── agent-reliability
-└── evaluation
-
-saas-architecture/
-├── multi-tenancy
-├── scalable-apis
-├── queues-and-events
-├── caching
-├── real-time-systems
-├── observability
-└── cloud-infrastructure
-```
-
-Problems after the LLM prototype works:
-
-- Can tenant data leak through retrieval or memory?  
-- How do we attribute AI cost, latency, and failures to features?  
-- How do we evaluate agent-generated changes before production?  
-- How do architecture boundaries stay enforceable for humans and coding agents?  
-
----
-
-## Technology stack
-
-| Layer | Tools |
+| Days | What happens |
 |---|---|
-| **Architecture** | Multi-tenancy · SaaS design · System design · Observability · Reliability |
-| **AI / LLM** | OpenAI · Claude · RAG · Embeddings · LangChain · Prompting · Evaluation |
-| **Backend** | Laravel · PHP · Node.js · REST · Webhooks · Queues · Jobs |
-| **Frontend** | Vue.js · React · Next.js · Inertia.js · TypeScript |
-| **Data** | PostgreSQL · MySQL · Redis · Elasticsearch/OpenSearch · Caching |
-| **Infrastructure** | AWS · ALB · Docker · CI/CD · RDS · CloudFront · CloudWatch |
+| 1 to 7 | Map the system and its failure modes: the paths that touch money, inventory and customer data |
+| 8 to 20 | Ship one guarded win behind a flag (an AI assist, a lock, a cache, an idempotency fix), measured before and after |
+| 21 to 30 | Instrument and hand over: traces, alerts and a short runbook so the gain keeps working |
 
 ---
 
-## How I think about engineering
+## Problem → fix: the stacks I reach for
 
-1. **Simplicity before cleverness.**  
-2. **Architecture should make the safe path the easy path.**  
-3. **Observability is part of the feature.**  
-4. **Multi-tenancy is an architecture concern, not only a `tenant_id` column.**  
-5. **AI features need evaluation, budgets, and failure modes — not only prompts.**  
-6. **Performance work starts with measurement.**  
-7. **Boring infrastructure is usually good infrastructure.**  
-8. **Good architecture makes future changes boring.**  
+| The problem | What I put in place |
+|---|---|
+| **The AI demo works. Now it has to ship.** | Scoped retrieval, per-call ownership and spend ceiling, queued model calls with retry policy, traces plus an eval set, deterministic fallback |
+| **Customers are charged or sold twice.** | Idempotency keys, Redis holds with expiry, an explicit state machine, audit rows |
+| **Search and catalog pages time out.** | Elasticsearch index, Redis cache with real invalidation, read replicas, async reindex |
+| **Webhooks arrive twice, late or out of order.** | Signature verification, an event ledger, replay tooling, circuit breakers |
+| **Many customers share one codebase.** | Tenant-scoped data access, tenant-aware queues and cache, per-tenant config, isolation tests on every release |
 
-Frameworks change quickly. The engineering principles underneath them usually don't.
+---
+
+## Selected work
+
+### Established platforms
+
+| | Platform | Problem | Fix | Outcome |
+|---|---|---|---|---|
+| 01 | **[TheTutor.me](https://contactumar.com/projects/thetutor-me)** · learning platform | API slowed as traffic grew; the database got the blame | Traced duplicate upstream calls, added a request-scoped cache, moved sessions off the app box for horizontal scale on AWS | Held 50K+ concurrent users; API ~25% faster in my benchmark |
+| 02 | **[EventBuizz](https://contactumar.com/projects/eventbuizz)** · real-time events | Schedule changes only appeared after refresh | Socket.IO with a Redis adapter so every process reaches every client; Laravel for domain, Next.js for the live surface | Engagement up ~30% (client analytics) |
+| 03 | **[ParkFlow](https://contactumar.com/projects/parkflow)** · airport parking SaaS | Travellers could not see availability; operators priced blind | Vue + Inertia on Laravel; operator analytics built before booking polish | Booking ~25% faster (staging); pre-booking up ~30% (client) |
+| 04 | **[Doocado](https://contactumar.com/projects/doocado)** · multi-tenant ordering | Branded ordering per restaurant without a deployment per restaurant | One multi-tenant Laravel app with scoped data, branding and built-in analytics | Live in the USA, Mexico and Brazil |
+| 05 | **[DineHome](https://contactumar.com/projects/dinehome)** · food ordering | Payments and CMS to integrate; releases depended on one person | Gateway and CMS integration with failure paths; documented local → dev → staging → production route over Git | Running in Norway with a repeatable release process |
+
+### Recent builds, with AI in the pipeline
+
+| | Platform | Problem | Fix | AI layer |
+|---|---|---|---|---|
+| 06 | **[LuckyCharmGold](https://luckycharmgold.com/)** · digital marketplace | Sale-day spikes, price drift, orders marked unpaid after payment, risky payouts | Idempotent orders and payment confirmation, Redis rate cache, Elasticsearch catalog, ALB + SQS workers | Support copilot, price-suggestion signals, anomaly scoring |
+| 07 | **[Direct To You Tickets](https://directtoyoutickets.com/)** · broker operations | Double-sold lots, slow search, timing-out imports | Inventory state machine, Redis holds, Elasticsearch fuzzy search, queued CSV import | Demand forecasting, section pricing, semantic matching, reply assistant |
+| 08 | **[Greencard](https://paygreencard.com/)** · pay-by-bank (ACH) | Five surfaces needing safe, non-duplicating payments | Laravel core + Node API, idempotency keys, HMAC-signed webhooks with replay, Redis locks, sandbox with forced return codes | Duplicate-event and double-pay paths closed |
+
+Metrics above are either published on [contactumar.com](https://contactumar.com), client-reported, or my own staging benchmarks. Where I do not have a measured number I describe the result instead.
+
+---
+
+## Production AI readiness checklist
+
+The questions I answer before an LLM feature goes live:
+
+- [ ] **Scope**: can retrieval only see what the current user or tenant may see?
+- [ ] **Ownership**: does every model call record who, which feature and how much it cost?
+- [ ] **Budget**: is there a spend ceiling and a rate limit per feature?
+- [ ] **Failure**: what does the user get when the model is slow, wrong or down?
+- [ ] **Evidence**: can I replay a bad answer and prove a prompt change improved it?
+- [ ] **Rollout**: is it behind a flag, on a thin slice of real data first?
+
+---
+
+## Toolkit
+
+| Area | What I work with |
+|---|---|
+| **AI / LLM** | OpenAI API · Anthropic Claude · LangChain · RAG and embeddings · Langfuse tracing · copilots and scoring hooks · prompting for product features |
+| **Architecture** | Multi-tenancy · state machines · idempotency and webhooks · microservice boundaries · API contracts · observability |
+| **Backend** | PHP · Laravel · Node.js · CodeIgniter · REST · queues and workers · WooCommerce |
+| **Frontend** | React · Vue · Next.js · Inertia · TypeScript · admin SPAs · real-time UX |
+| **Data** | MySQL · Redis · Elasticsearch / OpenSearch · read replicas · Socket.IO |
+| **Cloud** | AWS ALB · SQS · S3 and CloudFront · RDS · CloudWatch · CI/CD · Docker |
+
+---
+
+## How I work
+
+1. **Prove it on a thin slice of real data.** One workflow, one measurement, then widen.
+2. **Every model call has an owner.** Who triggered it, what it may read, what it may spend.
+3. **Isolate before you retrieve.** Search, memory and caches follow the database's boundaries.
+4. **Fix the cause, not the usual suspect.** Profile before you decide.
+5. **Change live systems in slices.** The old path keeps serving traffic until the new one earns it.
+6. **Leave a runbook behind.** If the release path lives in one head, it is not finished.
 
 ---
 
 ## Experience
 
-| Period | Role | Org |
-|---|---|---|
-| Oct 2024 – Present | Senior Software Engineer | Wanological Solutions |
-| Aug 2023 – Sep 2024 | Senior Laravel Developer | BitClans IT Solutions |
-| Feb 2022 – Dec 2022 | Senior PHP Developer | In All Media |
-| Jun 2018 – Feb 2022 | Senior Web Developer | Hello World Technologies |
+| Period | Role | Where | Focus |
+|---|---|---|---|
+| Oct 2024 to Present | Senior Software Engineer | Wanological Solutions | Modularised legacy Laravel, automated diagnostics (~40% faster data processing), LLM features: document retrieval and agents that call internal tools |
+| Aug 2023 to Sep 2024 | Senior Laravel Developer | BitClans IT Solutions | End-to-end Laravel delivery, ownership of code review, testing and release quality |
+| Feb 2022 to Dec 2022 | Senior PHP Developer | In All Media | Laravel 4 → 8 migration, Next.js and React Native features |
+| Jun 2018 to Feb 2022 | Senior Web Developer | Hello World Technologies | Laravel APIs, monolith to microservices (downtime down ~30%), CodeIgniter |
 
-**Education:** Master's in Computer Science — The Islamia University of Bahawalpur
-
----
-
-## Work with me
-
-**AI & LLM integration** · **SaaS architecture & multi-tenancy** · **Laravel and backend engineering** · **Performance and scaling** · **APIs and platform engineering** · **Architecture reviews**
-
-Lahore, Pakistan (**UTC+5**) · remote worldwide.
-
-### Let's build systems that survive production.
-
-[contactumar.com](https://contactumar.com) · [umarfarooq-ai](https://github.com/contacttoumar/umarfarooq-ai) · [LinkedIn](https://www.linkedin.com/in/contacttoumar) · [umar7400@gmail.com](mailto:umar7400@gmail.com)
+Education: Master's in Computer Science, The Islamia University of Bahawalpur.
 
 ---
 
-<div align="center">
+## What colleagues say
 
-**Solution Architect · Senior Software Engineer · SaaS Architecture · AI/LLM Engineering · Laravel · Multi-Tenancy · RAG · AWS**
+> "I started under Umar's mentorship at Hello World Technologies. He is profound, tackles hard problems, and would strengthen any team." — **Sohail Idrees**, Digital Growth Strategist
 
-</div>
+> "As a team lead he juggled several projects at once. Multitasking and delivery that deserve recognition." — **Junaid Tahir**, Project Manager, CSPO
+
+> "Long-time colleague at Hello World. Outstanding at complex business logic, and a reliable team player." — **Jahanzaib Ramzan**, Senior Software Engineer
+
+---
+
+## Let's talk
+
+If you have an AI feature that needs to survive production, a platform that needs a sound architecture, or a live system that needs careful hands, send me a short note about the problem. I reply within a working day, and I will tell you plainly if I am not the right fit.
+
+📧 [umar7400@gmail.com](mailto:umar7400@gmail.com) · 🌐 [contactumar.com](https://contactumar.com) · 💼 [LinkedIn](https://www.linkedin.com/in/contacttoumar)
