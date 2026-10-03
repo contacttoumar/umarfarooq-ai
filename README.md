@@ -1,19 +1,14 @@
 # Umar Farooq — Portfolio Template
 
-Personal portfolio site for **Umar Farooq**, Senior Full Stack & PHP Developer (Riyadh · open to remote).
+Portfolio site for **Umar Farooq**, Senior Software Engineer (Laravel & AI) based in Lahore.
 
-Inspired by structure patterns from developer portfolios such as [khawarr.com](https://khawarr.com) (scenario stack picker, selected work, services), with **original copy** based on:
-
-- LinkedIn: [umarfarooq-ai](https://www.linkedin.com/in/umarfarooq-ai/)
-- Site: [itsumarfarooq.com](https://itsumarfarooq.com)
-- GitHub: [Umar-444](https://github.com/Umar-444) (Laravel/PHP, Next.js, ecommerce, attendance APIs, SlimPOS/VILT, AI tooling)
-- CV tracks: Senior Full Stack Developer · Senior PHP Developer
+Content and images sourced from [contactumar.com](https://contactumar.com) (photo, project OG art, roles, case studies), with original wording for this template.
 
 ## Stack
 
 - Next.js (App Router) + TypeScript
 - Tailwind CSS v4
-- Framer Motion (stack picker + testimonials)
+- Framer Motion
 
 ## Run locally
 
@@ -26,13 +21,8 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
 ## Customize
 
-Edit content in `src/data/profile.ts` (bio, work, services, stack scenarios, experience, testimonials).
+Edit `src/data/profile.ts`. Images live in `public/images/` (portrait + project covers from contactumar.com).
 
-## Scripts
+## Note
 
-| Command       | Description              |
-| ------------- | ------------------------ |
-| `npm run dev` | Dev server on port 4321  |
-| `npm run build` | Production build       |
-| `npm run start` | Start production server |
-| `npm run lint`  | ESLint                 |
+The Windows path `D:\wamp64\www\Umar-portflio` is not available in this cloud environment—assets were pulled from the live site instead.

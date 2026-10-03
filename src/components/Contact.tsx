@@ -7,11 +7,11 @@ export function Contact() {
       <div className="relative mx-auto max-w-6xl">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Contact</p>
         <h2 className="mt-3 max-w-3xl font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-ink md:text-6xl">
-          Let&apos;s build the next reliable release
+          Tell me about the role—or what is breaking
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-          Laravel modernization, Next.js SaaS, ERP delivery, or AI features with production guardrails. Tell me what
-          needs to ship.
+          Laravel at scale, real-time features, multi-tenant SaaS, or AI inside an app that already has users. I reply
+          within a working day, and I will say if I am not the right fit.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-3">

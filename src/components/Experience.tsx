@@ -10,8 +10,8 @@ export function Experience() {
             Recent track
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-            From agency leadership to manufacturing ERP and AI product work—aligned with Senior Full Stack and Senior
-            PHP CV tracks.
+            Eight years, mostly on systems that were already in production when I arrived—Hello World through
+            Wanological.
           </p>
         </div>
 

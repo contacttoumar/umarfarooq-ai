@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { principles, profile, skills, stats } from "@/data/profile";
 
 export function About() {
@@ -13,43 +14,55 @@ export function About() {
           </div>
         ))}
       </div>
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-bright">About</p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight md:text-5xl">
-            Full-stack when the product needs it. PHP when the business depends on it.
-          </h2>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">{profile.bio}</p>
 
-          <div className="mt-8 rounded-xl border border-white/10 bg-white/5 p-5 font-mono text-sm leading-relaxed text-white/80">
-            <p>
-              <span className="text-accent-bright">$</span> whoami
-            </p>
-            <p className="mt-2 text-white/55">
-              umar farooq · senior full stack & php · laravel / next.js / ai · riyadh · open to global remote
-            </p>
-            <p className="mt-4">
-              <span className="text-accent-bright">$</span> stack --daily
-            </p>
-            <p className="mt-2 text-white/55">{profile.focus.join(" · ")}</p>
-            <p className="mt-4">
-              <span className="text-accent-bright">$</span> links
-            </p>
-            <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-white/55">
-              <a className="hover:text-accent-bright" href={profile.github} target="_blank" rel="noopener noreferrer">
-                github/Umar-444
-              </a>
-              <a className="hover:text-accent-bright" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-                linkedin/umarfarooq-ai
-              </a>
-              <a className="hover:text-accent-bright" href={profile.website} target="_blank" rel="noopener noreferrer">
-                itsumarfarooq.com
-              </a>
-            </p>
-          </div>
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 lg:mx-0">
+          <Image
+            src={profile.photo}
+            alt={profile.photoAlt}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 1024px) 320px, 360px"
+          />
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-10">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-bright">About</p>
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight md:text-5xl">
+              Laravel at scale. AI features that stay in production.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">{profile.bio}</p>
+            <p className="mt-3 text-sm text-white/45">{profile.education}</p>
+
+            <div className="mt-8 rounded-xl border border-white/10 bg-white/5 p-5 font-mono text-sm leading-relaxed text-white/80">
+              <p>
+                <span className="text-accent-bright">$</span> whoami
+              </p>
+              <p className="mt-2 text-white/55">
+                umar farooq · senior software engineer · laravel / vue / ai · lahore · open to senior &amp; lead roles
+              </p>
+              <p className="mt-4">
+                <span className="text-accent-bright">$</span> stack --daily
+              </p>
+              <p className="mt-2 text-white/55">{profile.focus.join(" · ")}</p>
+              <p className="mt-4">
+                <span className="text-accent-bright">$</span> links
+              </p>
+              <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-white/55">
+                <a className="hover:text-accent-bright" href={profile.website} target="_blank" rel="noopener noreferrer">
+                  contactumar.com
+                </a>
+                <a className="hover:text-accent-bright" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a>
+                <a className="hover:text-accent-bright" href={profile.github} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+              </p>
+            </div>
+          </div>
+
           <div>
             <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-white/45">Toolkit</h3>
             <div className="mt-4 space-y-4">
@@ -63,7 +76,7 @@ export function About() {
           </div>
 
           <div>
-            <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-white/45">How I think</h3>
+            <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-white/45">How I work</h3>
             <div className="mt-4 space-y-4">
               {principles.map((item) => (
                 <div key={item.code} className="border-t border-white/10 pt-4">

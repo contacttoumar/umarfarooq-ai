@@ -21,27 +21,33 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Umar Farooq | Senior Full Stack & PHP Developer",
+  metadataBase: new URL("https://contactumar.com"),
+  title: "Umar Farooq · Senior Software Engineer, Laravel and AI",
   description:
-    "Senior Full Stack and PHP developer in Riyadh. Laravel ERPs, Next.js SaaS, and production AI features. Open to remote roles worldwide.",
+    "Senior software engineer in Lahore. Eight years on Laravel systems—one holding 50,000 concurrent users—plus production LLM and RAG features.",
   keywords: [
     "Umar Farooq",
-    "Senior Full Stack Developer",
-    "Senior PHP Developer",
+    "Senior Software Engineer",
     "Laravel",
-    "Next.js",
-    "ERP",
-    "AI Engineer",
-    "Riyadh",
+    "PHP",
+    "AI",
+    "RAG",
+    "Lahore",
+    "contactumar",
   ],
-  authors: [{ name: "Umar Farooq", url: "https://itsumarfarooq.com" }],
+  authors: [{ name: "Umar Farooq", url: "https://contactumar.com" }],
+  icons: {
+    icon: [{ url: "/images/favicon.svg", type: "image/svg+xml" }],
+    apple: "/images/apple-touch-icon.png",
+  },
   openGraph: {
-    title: "Umar Farooq | Senior Full Stack & PHP Developer",
+    title: "Umar Farooq · Senior Software Engineer, Laravel and AI",
     description:
-      "Laravel ERPs, Next.js SaaS, and AI-backed products. Portfolio template for Umar Farooq.",
-    url: "https://itsumarfarooq.com",
+      "Eight years on Laravel systems and production AI features. Based in Lahore, open to senior and lead roles.",
+    url: "https://contactumar.com",
     siteName: "Umar Farooq",
     type: "website",
+    images: [{ url: "/images/og.png", width: 1200, height: 630, alt: "Umar Farooq" }],
   },
 };
 

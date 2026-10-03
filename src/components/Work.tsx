@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { projects } from "@/data/profile";
 
 export function Work() {
@@ -7,11 +8,14 @@ export function Work() {
         <div className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Selected work</p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-ink md:text-5xl">
-            Systems that had to keep running
+            Systems in production, with numbers that moved
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-            Manufacturing ERPs, multi-system ops, agency products, and AI roadmap work—drawn from live roles and public
-            repos.
+            Learning platforms, live events, airport parking SaaS, and multi-tenant food ordering—drawn from{" "}
+            <a href="https://contactumar.com/projects" className="text-accent underline-offset-2 hover:underline">
+              contactumar.com
+            </a>
+            .
           </p>
         </div>
 
@@ -19,21 +23,30 @@ export function Work() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="group grid gap-4 border-t border-[var(--line)] py-8 md:grid-cols-[80px_1fr_220px] md:gap-8"
+              className="group grid gap-5 border-t border-[var(--line)] py-8 md:grid-cols-[140px_1fr_200px] md:items-start md:gap-8"
             >
-              <div className="font-mono text-sm text-accent">{project.id}</div>
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative aspect-[16/10] overflow-hidden rounded-lg border border-[var(--line)] bg-paper-deep md:aspect-square"
+              >
+                <Image
+                  src={project.image}
+                  alt=""
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  sizes="160px"
+                />
+              </a>
               <div>
                 <p className="text-xs uppercase tracking-[0.16em] text-muted">
-                  {project.year} · {project.role} · {project.company}
+                  {project.id} · {project.role} · {project.company}
                 </p>
                 <h3 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight text-ink transition group-hover:text-accent">
-                  {"href" in project && project.href ? (
-                    <a href={project.href} target="_blank" rel="noopener noreferrer">
-                      {project.title}
-                    </a>
-                  ) : (
-                    project.title
-                  )}
+                  <a href={project.href} target="_blank" rel="noopener noreferrer">
+                    {project.title}
+                  </a>
                 </h3>
                 <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted md:text-base">{project.summary}</p>
               </div>

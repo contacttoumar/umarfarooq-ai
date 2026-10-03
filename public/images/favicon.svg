@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Umar Farooq">
+  <!--
+    Cobalt ground, near-black mark — the same two values the site is built on.
+    Deliberately a solid tile rather than a transparent glyph: at 16px in a
+    browser tab, a filled shape stays legible against both light and dark
+    chrome, where a thin letterform disappears.
+  -->
+  <rect width="64" height="64" rx="10" fill="#2f63b8" />
+  <path
+    d="M18 17v18.5c0 6.6 5.4 11.5 14 11.5s14-4.9 14-11.5V17h-8.2v18.1c0 3.3-2.3 5.6-5.8 5.6s-5.8-2.3-5.8-5.6V17z"
+    fill="#0d0d0e"
+  />
+</svg>
