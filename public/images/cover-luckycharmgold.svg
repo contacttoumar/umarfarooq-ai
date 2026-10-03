@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#854d0e"/>
+      <stop offset="1" stop-color="#12181f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <circle cx="640" cy="120" r="160" fill="#fff" fill-opacity="0.06"/>
+  <circle cx="720" cy="380" r="120" fill="#fff" fill-opacity="0.05"/>
+  <text x="48" y="200" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">LuckyCharmGold</text>
+  <text x="48" y="260" fill="#fff" fill-opacity="0.75" font-family="Arial, sans-serif" font-size="24">AI commerce · React</text>
+  <rect x="48" y="310" width="72" height="6" rx="3" fill="#fff" fill-opacity="0.85"/>
+</svg>

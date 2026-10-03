@@ -143,6 +143,42 @@ export const services = [
 export const projects = [
   {
     id: "001",
+    year: "Featured",
+    role: "Full-stack engineer",
+    company: "LuckyCharmGold",
+    title: "LuckyCharmGold AI commerce marketplace",
+    summary:
+      "React.js storefront for OSRS gold, items, accounts, and services—buy/sell checkout, loyalty ranks, Redis + Elasticsearch catalog, AWS ALB, and AI pricing/fraud copilots. Checkout conversion +41%; catalog p95 1.8s → 220ms.",
+    stack: ["React.js", "Node.js", "PHP", "Redis", "Elasticsearch", "AWS", "OpenAI"],
+    image: "/images/cover-luckycharmgold.svg",
+    href: "https://luckycharmgold.com/",
+  },
+  {
+    id: "002",
+    year: "Featured",
+    role: "Full-stack engineer",
+    company: "Direct To You Tickets",
+    title: "Direct To You Tickets ops platform",
+    summary:
+      "Vue.js DTYT admin + React customer widgets + Node.js services for broker inventory. Redis holds killed double-sells; Elasticsearch search for hot events; AI demand/pricing match. Time-to-match ↓70%; sell-through +33%.",
+    stack: ["Vue.js", "React.js", "Node.js", "Redis", "Elasticsearch", "AWS"],
+    image: "/images/cover-dtyt.svg",
+    href: "https://directtoyoutickets.com/",
+  },
+  {
+    id: "003",
+    year: "Featured",
+    role: "Platform engineer",
+    company: "Greencard",
+    title: "Greencard ACH payment ecosystem",
+    summary:
+      "Multi-repo fintech: Laravel core, Node agent API, React/Vue panels, WooCommerce plugin, invoice pay portal. Idempotent ACH, HMAC webhooks, Redis locks, AWS ALB—pay-by-bank for regulated commerce across all 50 U.S. states.",
+    stack: ["Laravel", "Node.js", "React", "Vue.js", "WooCommerce", "Redis", "AWS"],
+    image: "/images/cover-greencard.svg",
+    href: "https://paygreencard.com/",
+  },
+  {
+    id: "004",
     year: "Production",
     role: "Senior Laravel Developer",
     company: "TheTutor.me",
@@ -154,7 +190,7 @@ export const projects = [
     href: "https://contactumar.com/projects/thetutor-me",
   },
   {
-    id: "002",
+    id: "005",
     year: "Production",
     role: "Senior Developer",
     company: "EventBuizz",
@@ -166,7 +202,7 @@ export const projects = [
     href: "https://contactumar.com/projects/eventbuizz",
   },
   {
-    id: "003",
+    id: "006",
     year: "Production",
     role: "Senior Developer",
     company: "ParkFlow",
@@ -178,7 +214,7 @@ export const projects = [
     href: "https://contactumar.com/projects/parkflow",
   },
   {
-    id: "004",
+    id: "007",
     year: "Production",
     role: "Development Lead",
     company: "Doocado",
@@ -190,7 +226,7 @@ export const projects = [
     href: "https://contactumar.com/projects/doocado",
   },
   {
-    id: "005",
+    id: "008",
     year: "Production",
     role: "Lead Developer",
     company: "DineHome",
@@ -235,11 +271,11 @@ export const experience = [
 ];
 
 export const skills = {
-  backend: ["Laravel", "PHP", "Node.js", "CodeIgniter", "REST APIs", "Microservices"],
-  frontend: ["Vue.js", "Inertia.js", "Livewire", "React.js", "Next.js", "JavaScript"],
-  data: ["MySQL", "Redis", "Socket.IO"],
-  ai: ["OpenAI API", "Anthropic Claude", "LangChain", "RAG", "Langfuse", "Prompt engineering"],
-  ops: ["AWS", "SaaS architecture", "Git / GitHub"],
+  backend: ["Laravel", "PHP", "Node.js", "CodeIgniter", "REST APIs", "Microservices", "WooCommerce"],
+  frontend: ["React.js", "Vue.js", "Next.js", "Inertia.js", "Livewire", "TypeScript"],
+  data: ["MySQL", "Redis", "Elasticsearch / OpenSearch", "Socket.IO"],
+  ai: ["OpenAI API", "Anthropic Claude", "LangChain", "RAG", "Fraud / pricing copilots"],
+  ops: ["AWS ALB", "SQS", "CloudFront", "S3", "RDS", "CloudWatch", "CI/CD"],
 };
 
 export const testimonials = [

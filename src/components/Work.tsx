@@ -11,12 +11,10 @@ export function Work() {
             Systems in production, with numbers that moved
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-            TheTutor.me, EventBuizz, ParkFlow, <span className="font-semibold text-ink">Doocado</span>, and{" "}
-            <span className="font-semibold text-ink">DineHome</span>—live systems from{" "}
-            <a href="https://contactumar.com/projects" className="text-accent underline-offset-2 hover:underline">
-              contactumar.com
-            </a>
-            .
+            Featured: <span className="font-semibold text-ink">LuckyCharmGold</span>,{" "}
+            <span className="font-semibold text-ink">Direct To You Tickets</span>,{" "}
+            <span className="font-semibold text-ink">Greencard</span> — plus TheTutor.me, EventBuizz, ParkFlow,
+            Doocado, and DineHome.
           </p>
         </div>
 
