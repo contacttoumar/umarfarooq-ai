@@ -37,5 +37,5 @@ Profile home: paste `github-profile/README.md` into the repo **`contacttoumar/co
 
 ## Content notes
 
-- No location is published anywhere in the site or the profile README.
-- Metrics are limited to numbers published on contactumar.com, client-reported figures, or staging benchmarks, and are labelled as such. Projects 06 to 08 describe results qualitatively until measured numbers exist; add them in `src/data/profile.ts` when you have them.
+- Location (Lahore, Pakistan · UTC+5) is set once in `src/data/profile.ts` and reused across the site.
+- Metrics are limited to numbers published on contactumar.com, client-reported figures, or staging benchmarks, and are labelled as such. Projects 06 to 08 describe results qualitatively until measured numbers exist (the dossier's growth figures were labelled targets, so they are not published); add them in `src/data/profile.ts` when you have them.

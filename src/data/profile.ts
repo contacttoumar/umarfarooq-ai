@@ -4,6 +4,7 @@ export const profile = {
   tagline:
     "I take AI features from promising prototype to something a business can depend on: retrieval, copilots and scoring wired into platforms that already carry real traffic and real money.",
   availability: "Open to AI engineering, architecture and lead roles",
+  location: "Lahore, Pakistan · UTC+5 · remote worldwide",
   email: "umar7400@gmail.com",
   website: "https://contactumar.com",
   github: "https://github.com/contacttoumar",
@@ -220,6 +221,8 @@ export type Project = {
   problem: string;
   fix: string;
   ai?: string;
+  hard?: string[];
+  architecture?: string;
   outcome: string;
   stack: string[];
   image: string;
@@ -317,6 +320,23 @@ export const projects: Project[] = [
       "React storefront over APIs; idempotent order creation and payment confirmation; a Redis rate cache refreshed when admins change rates; Elasticsearch for catalog search; ALB with auto scaling and SQS workers for pricing, email and loyalty.",
     ai:
       "Support copilot for agents with order context, price-suggestion signals from market data, and anomaly scoring hooked into the order pipeline.",
+    hard: [
+      "Idempotent order create plus webhook-safe payment confirmation, so gold is never delivered twice",
+      "Distributed rate cache invalidated the moment an admin changes a rate, with cache-stampede protection on hot endpoints",
+      "Loyalty ledger (Bronze to Torva) that recalculates safely after refunds and cancels, with audit rows",
+      "Circuit breakers around payment and ID-verification providers so one gateway outage does not stop checkout",
+      "AI fraud features wired into the order pipeline as a scoring hook, not a demo chatbot",
+    ],
+    architecture: `CloudFront CDN
+      |
+ AWS ALB + WAF
+      |
+ +----+-----------+
+ React SPA     Node/PHP API nodes (ASG)
+ (S3 + CF)          |
+        Redis cluster | Elasticsearch
+        MySQL primary + read replicas
+        SQS workers: pricing / email / loyalty / fraud scoring`,
     outcome:
       "Checkout races closed, catalog and rate refresh moved off the database hot path, and loyalty recalculation made safe across refunds.",
     stack: ["React", "Node.js", "Redis", "Elasticsearch", "AWS", "OpenAI"],
@@ -335,6 +355,20 @@ export const projects: Project[] = [
       "Vue admin with role-based access; an inventory state machine; Redis holds with expiry across load-balanced API nodes; Elasticsearch search with fuzzy artist and event names; queued CSV import and reindex.",
     ai:
       "Demand forecasting, price suggestions per section, semantic match from a customer request to the best inventory, and a reply assistant for brokers.",
+    hard: [
+      "Inventory state machine (available, held, sold, fulfilled) with Redis TTL holds shared by every API node behind the load balancer",
+      "Elasticsearch analyzers so fuzzy artist and event names match (\"ac/dc\" and \"ACDC\")",
+      "Queue-based CSV import and reindex with a failed-row report and partial-commit safety",
+      "Timezone-correct sales windows: UTC in storage, venue-local on screen",
+      "Audit trail that answers disputes: who changed which price, and when",
+    ],
+    architecture: `Route53 -> AWS ALB
+              |
+   +----------+-----------+
+ Vue admin   Node API   React customer widgets
+   |            |            |
+ Redis holds  Elasticsearch  MySQL primary + replicas
+ SQS: import / reindex / hold-expiry / notify / AI forecast`,
     outcome:
       "Double-sell path closed, broker search fast enough to use mid-call, and large imports run in the background with a failed-row report.",
     stack: ["Vue.js", "React", "Node.js", "Redis", "Elasticsearch", "AI"],
@@ -351,6 +385,23 @@ export const projects: Project[] = [
       "Regulated merchants needed bank payments through several surfaces at once: a core app, an API, a WooCommerce store, an invoice page and an admin panel, with webhooks that could not double-process.",
     fix:
       "Laravel core for merchants, invoices and settlements; a Node API for payments and bank-link sessions; idempotency keys on every write; HMAC-signed webhooks with replay; Redis locks against double-pay; a sandbox with forced return codes.",
+    hard: [
+      "Idempotency keys on every payment write, with Redis-backed dedupe windows shared across all API nodes",
+      "HMAC-signed webhooks with at-least-once delivery, exactly-once effects, and a dashboard replay",
+      "Redis locks on invoice pay so a double click cannot capture twice",
+      "Designed failure paths: returns, re-authorising a bank link, partial timeouts from the bank partner",
+      "WooCommerce gateway edge cases: currency and minor units, thank-you page race, webhook versus redirect confirmation",
+    ],
+    architecture: `Route53 + WAF -> AWS ALB
+        |
+ +------+---------+----------+-------------+
+ Agent panel   Node agent   Laravel core   Invoice pay
+ (React/Vue)   API          (domain+jobs)  portal
+        |          |            |              |
+        +----- Redis (locks, idempotency) ----+
+        +----- SQS (webhooks, settlement, SMS)
+        +----- MySQL primary + replicas, OpenSearch
+        +----- bank-link and ACH partners`,
     outcome:
       "Merchants connect through a drop-in WooCommerce gateway or the API, customers pay invoices on a mobile-first page, and duplicate-event and double-pay paths are closed.",
     stack: ["Laravel", "Node.js", "React", "Vue.js", "WooCommerce", "AWS"],

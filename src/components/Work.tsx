@@ -63,6 +63,27 @@ function ProjectRow({ project }: { project: Project }) {
               </Block>
             </div>
           ) : null}
+          {project.hard ? (
+            <div className="md:col-span-2">
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent">Hard problems solved</p>
+              <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-ink-soft md:text-[15px]">
+                {project.hard.map((item) => (
+                  <li key={item} className="flex gap-2.5">
+                    <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {project.architecture ? (
+            <details className="md:col-span-2 rounded-lg border border-[var(--line)] bg-white/60 p-3">
+              <summary className="cursor-pointer font-mono text-[11px] uppercase tracking-[0.16em] text-ink-soft">
+                Architecture sketch
+              </summary>
+              <pre className="mt-3 overflow-x-auto font-mono text-[11px] leading-relaxed text-ink-soft">{project.architecture}</pre>
+            </details>
+          ) : null}
           <div className="md:col-span-2">
             <Block label="Outcome">{project.outcome}</Block>
           </div>

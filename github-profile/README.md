@@ -3,13 +3,15 @@
 # Umar Farooq
 ### AI Engineer & Solution Architect
 
-**I put LLM features inside live products, and design the systems underneath so they hold up.**
+**I build revenue-critical platforms, then add the AI layer that makes them cheaper to run and harder to abuse.**
 
-Retrieval, copilots and scoring for platforms that already carry real traffic and real money. Architecture first, then AI that inherits its guarantees.
+Marketplace commerce · ticketing operations · regulated ACH payments · real-time and multi-tenant SaaS
+
+📍 Lahore, Pakistan · UTC+5 · working remotely with teams worldwide
 
 [Portfolio](https://contactumar.com) · [`umarfarooq-ai`](https://github.com/contacttoumar/umarfarooq-ai) · [LinkedIn](https://www.linkedin.com/in/contacttoumar) · [Email](mailto:umar7400@gmail.com)
 
-**8+ years shipping** · **50K+ concurrent users handled** · **8 platforms delivered** · **Open to AI engineering, architecture and lead roles**
+**8+ years shipping** · **50K+ concurrent users on TheTutor.me** · **8 platforms delivered** · **Open to AI engineering, architecture and lead roles**
 
 <img src="https://komarev.com/ghpvc/?username=contacttoumar&label=Profile%20views&color=0f766e&style=flat" alt="profile views" />
 
@@ -17,97 +19,203 @@ Retrieval, copilots and scoring for platforms that already carry real traffic an
 
 ---
 
-## In one minute
+## Who I am
 
-- **AI that ships.** Support copilots, semantic matching, price and fraud signals, wired into order pipelines with budgets, traces and fallbacks.
-- **Architecture that holds.** Multi-tenancy, idempotent payments, signed webhooks, inventory state machines, load-balanced AWS.
-- **Fixes that find the real cause.** Profile first. On TheTutor.me the slowdown was repeated upstream calls inside one request, not the database everyone blamed.
-- **Delivery that leaves a team stronger.** Reviews, runbooks and release paths that work when I am offline.
+I am a senior engineer from Lahore who has spent eight years inside products that were already live: learning platforms, event apps, airport parking, restaurant ordering, and most recently an OSRS marketplace, a ticket broker's operating system, and an ACH payment suite.
+
+What I am known for is the unglamorous failure list that costs real money: **double charges, double sells, stale prices, silent webhook retries, search that times out, releases that depend on one person.** I fix those at the root, then I add AI where it removes manual work, and I build it so it inherits the same guarantees as the rest of the system.
+
+| I lead with | Meaning in practice |
+|---|---|
+| **Architecture first** | Tenancy, state machines, queues, caching, search and the deploy path are decided before features pile on |
+| **AI inside the pipeline** | Support copilots, price signals, fraud scoring and semantic matching hooked into orders, not bolted on as a chat window |
+| **Root-cause fixes** | Profile, find the actual cause, change it in slices on live traffic |
+| **Handover** | Documented release paths and runbooks so the team does not need me online |
 
 ---
 
 ## How I can help you
 
-### Hiring for AI engineering?
-You want someone who has put LLM features inside systems that already make money.
+### If you are hiring for AI engineering
+- Support and broker **copilots** that read real order and inventory context
+- **Fraud and anomaly scoring** on order velocity and payout risk, running in the order pipeline
+- **Price intelligence** from market signals, and demand forecasting by artist, venue and season
+- **Semantic matching** from a customer request to the best inventory (embeddings plus structured filters)
+- Fallbacks, so a slow or wrong model never blocks checkout
 
-- Support and broker copilots that read real order or inventory context
-- Fraud, anomaly and pricing signals scored inside the order pipeline, not on a side dashboard
-- Retrieval, embeddings and prompts treated as product code: owned, budgeted, traced
-- A written fallback for every AI call, so a slow model never blocks checkout
+### If you are hiring for architecture
+- Multi-tenant SaaS where one wrong join cannot show one customer another's data
+- **Idempotent writes and signed webhooks** wherever money moves
+- Concurrent inventory modelled as a state machine with Redis holds, not a spreadsheet
+- Load-balanced AWS layouts: ALB, auto scaling, read replicas, search cluster, queue workers
 
-### Hiring for architecture?
-You want someone who decides the boundaries before the code is written.
+### If you are inheriting a live system
+- Profile first, fix the real cause (not the usual suspect)
+- Framework upgrades and monolith splits one flow at a time
+- A written local → development → staging → production route
+- Code review and handover as deliverables
 
-- Tenant isolation that holds across queries, queues, cache and retrieval
-- Idempotent writes and signed webhooks wherever money moves
-- Inventory and order state machines that survive concurrent users
-- Load-balanced AWS layouts with replicas, search and workers sized to the traffic
-
-### Inheriting a live system?
-You want someone who changes it in slices while it keeps serving customers.
-
-- Profile first, then fix the actual cause instead of the usual suspect
-- Framework upgrades and monolith splits, one flow at a time
-- Documented release paths so the team ships without me online
-- Code review and handover treated as deliverables
-
-### My first 30 days with a team
+### My first 30 days
 
 | Days | What happens |
 |---|---|
-| 1 to 7 | Map the system and its failure modes: the paths that touch money, inventory and customer data |
+| 1 to 7 | Map the paths that touch money, inventory and customer data, and list what breaks first |
 | 8 to 20 | Ship one guarded win behind a flag (an AI assist, a lock, a cache, an idempotency fix), measured before and after |
-| 21 to 30 | Instrument and hand over: traces, alerts and a short runbook so the gain keeps working |
+| 21 to 30 | Add traces, alerts and a short runbook so the gain outlasts my attention |
 
 ---
 
-## Problem → fix: the stacks I reach for
+## Featured platforms
 
-| The problem | What I put in place |
+### 1 · LuckyCharmGold · [luckycharmgold.com](https://luckycharmgold.com/)
+**AI-assisted digital marketplace.** Customers buy OSRS gold, items, accounts and services, sell gold for payouts across crypto and bank rails, and earn loyalty ranks with permanent discounts.
+Role: full-stack engineer (React storefront, Node/PHP APIs, integrations, caching, search, workers, AWS).
+
+**Problem.** Sale-day traffic spikes, item prices drifting from the market, orders left unpaid after a successful payment, double submits, risky payout methods, and a catalog that browsed slowly.
+
+**What I built and fixed**
+- React SPA storefront for gold, items, accounts and services with API-driven catalog, skeleton loaders and optimistic quantity updates
+- Sell-gold flow with a rate calculator and payout rules for USDT, LTC, PayPal G&S, Revolut/Wise, Zelle, SEPA, UK bank transfer, Venmo and Chime
+- Multi-payment checkout stabilised: paid-but-not-marked, double-submit and retry-safe order creation
+- Loyalty rank engine (Bronze to Torva) with automatic checkout discounts and a ledger that survives refunds and cancels
+- Admin tools for order assignment, delivery status, internal notes, rate management and account stock
+- Redis for sessions, cart, rate cards and rate limiting; Elasticsearch for catalog search and filters; CloudFront and S3 for assets
+
+**AI layer**
+- Support copilot for agents (order context plus FAQ drafting)
+- Price-intelligence suggestions from market signals
+- Fraud and anomaly scoring on order velocity and payout risk, wired into the order pipeline
+- Personalised upsell and loyalty recommendations; AI-assisted drafts for long-tail item pages
+
+```text
+CloudFront CDN
+      |
+ AWS ALB + WAF
+      |
+ +----+-----------+
+ React SPA     Node/PHP API nodes (ASG)
+ (S3 + CF)          |
+        Redis cluster | Elasticsearch
+        MySQL primary + read replicas
+        SQS workers: pricing / email / loyalty / fraud scoring
+```
+
+**Hard problems solved:** idempotent order create with webhook-safe payment confirmation (no double delivery) · a rate cache invalidated the instant an admin changes a rate · cache-stampede protection on hot rate endpoints · circuit breakers around payment and ID-verification providers · session-fixation hardening.
+
+**Why it beats a typical gold shop.** Controlled stock instead of a seller lottery, order-context tooling for support, live price sync instead of stale cards, loyalty instead of one-off purchases, risk scoring instead of hoping.
+
+**Integrations:** multi-rail payment processors and wallet checkout (Apple Pay, Google Pay), third-party ID verification for high-risk methods, live chat and Discord ops, transactional and marketing email, analytics and ad platforms, Trustpilot embeds, price-feed sync jobs, CloudWatch and error tracking.
+
+**Stack:** React · React Router · Node.js · PHP/Laravel-style APIs · MySQL · Redis · Elasticsearch/OpenSearch · SQS · AWS (ALB, ASG, S3, CloudFront, RDS, ElastiCache, SES, WAF, CloudWatch) · OpenAI/LLM APIs
+
+---
+
+### 2 · Direct To You Tickets · [directtoyoutickets.com](https://directtoyoutickets.com/)
+**Broker-owned ticketing operations platform.** Inventory, orders, fulfilment and customer handling for live-event sales, where answers are needed in seconds.
+Role: full-stack engineer (Vue admin, React customer widgets, Node services, search, locking, AWS).
+
+**Problem.** Brokers ran on spreadsheets and chat: two people could sell the same lot, search crawled across thousands of listings, imports timed out, and nobody could say who changed a price.
+
+**What I built and fixed**
+- Vue admin with JWT login and role-based access (super admin, broker, sales, finance/support); React widgets for customer requests and status
+- Inventory for events, venues, classes, sections, rows and quantities, with split and merge of lots, soft holds, price floors and markup
+- **Inventory state machine:** available → held → sold → fulfilled / cancelled
+- Bulk CSV import with validation, duplicate-SKU detection and an async reindex queue
+- Order flow from customer request to matched inventory to delivery (mobile transfer, PDF, will-call), invoices, partial fulfilment, refunds that return stock
+- Ops dashboard: today's events, holds about to expire, unpaid invoices, broker performance
+- Fixed LIKE-query searches that timed out, silent timezone bugs in sales windows, and staging versus production config drift
+
+**AI layer**
+- Demand forecasting by artist, venue and seasonality
+- Dynamic price suggestions per section and ticket class
+- Listing-quality copilot (titles, venue normalisation, incomplete listings)
+- Semantic match from a customer request to the best inventory, using embeddings plus structured filters
+- Anomaly alerts on suspicious orders; a broker assistant for customer replies and event briefings
+
+```text
+Route53 -> AWS ALB
+              |
+   +----------+-----------+
+ Vue admin   Node API   React customer widgets
+   |            |            |
+ Redis holds  Elasticsearch  MySQL primary + replicas
+ SQS: import / reindex / hold-expiry / notify / AI forecast
+```
+
+**Hard problems solved:** distributed holds in Redis with TTL and release-on-cancel across multiple API nodes · Elasticsearch analyzers for fuzzy artist and event names ("ac/dc" vs "ACDC") · partial-commit-safe CSV pipeline with a failed-row report · UTC storage with venue-local display · an audit trail good enough for a dispute.
+
+**Stack:** Vue (Router, Pinia/Vuex) · React · Node.js (Express/Fastify) · PHP where legacy needs it · MySQL with replicas · Redis · Elasticsearch/OpenSearch · SQS · AWS (ALB, ASG, RDS, ElastiCache, S3 signed URLs, SES, CloudFront, CloudWatch) · LLM and embedding APIs
+
+---
+
+### 3 · Greencard · [paygreencard.com](https://paygreencard.com/)
+**Compliance-first pay-by-bank (ACH) platform for regulated commerce**, available across the United States. Merchants take bank payments in store, online, by invoice and by SMS link, with white-label options for platforms.
+Role: platform engineer across five codebases.
+
+| Codebase | Component | Stack |
+|---|---|---|
+| `greencard-app` | Core merchant backend: onboarding, invoices, payments, refunds, settlements | Laravel |
+| `greencard-agent-api` | Payments API, bank-link sessions, signed webhooks, sandbox | Node.js |
+| `greencard-extension-woocommerce` | Drop-in payment gateway (API key, secret, UUID, API v2) | WordPress / WooCommerce |
+| `greencard-pg` | Customer invoice payment portal, mobile-first | Hosted portal |
+| `greencard-agent` | Merchant and super-admin console | React / Vue |
+
+**Problem.** Bank payments across several surfaces at once, with webhooks that can arrive twice, clients that retry, and bank partners that time out. A double debit is not a bug, it is an incident.
+
+**What I built and fixed**
+- Laravel domain services for merchants, customers, invoices, payments, refunds and settlements; roles and permissions; credential issuance; reconciliation reports
+- Node API for create, retrieve, cancel and refund of ACH payments, bank-link sessions, request logging and health checks
+- **Idempotency middleware** so a client retry never debits twice
+- **HMAC-signed webhooks** (authorised, settled, returned, disputed) with a replay tool
+- **Sandbox mode** with forced return codes and settlement simulation, so partners test real failure paths
+- WooCommerce gateway: checkout → ACH payment → hosted confirmation → order marked paid, failed or returned
+- Invoice portal: expired-token and already-paid double-pay bugs fixed; mobile-first pay flow for SMS links
+- Merchant and super consoles: payments list and export, invoicing, API key management, role-based menus
+
+```text
+Route53 + WAF -> AWS ALB
+        |
+ +------+---------+----------+-------------+
+ Agent panel   Node agent   Laravel core   Invoice pay
+ (React/Vue)   API          (domain+jobs)  portal
+        |          |            |              |
+        +----- Redis (locks, idempotency) ----+
+        +----- SQS (webhooks, settlement, SMS)
+        +----- MySQL primary + replicas, OpenSearch
+        +----- bank-link and ACH partners
+```
+
+**Hard problems solved:** exactly-once effects from at-least-once delivery · Redis locks around invoice pay · circuit breakers on bank calls · designed failure modes (returns, re-authorising a bank link, partial timeouts) rather than only the happy path · sandbox and live isolated by keys, queues and environments · payments and webhook tables designed to shard by merchant and month.
+
+**Integrations:** instant bank linking and ACH settlement partners, POS systems for dispensaries, WooCommerce and Shopify paths, QuickBooks sync, SMS pay links, SES email, white-label theming.
+
+**Stack:** Laravel · Node.js · React · Vue · WooCommerce (PHP) · MySQL on RDS · Redis · OpenSearch · SQS · AWS (ALB, ASG, CloudFront, SES, Secrets Manager, WAF, CloudWatch) · Docker
+
+---
+
+## Earlier platforms
+
+| Platform | Problem | What I did | Result |
+|---|---|---|---|
+| **[TheTutor.me](https://contactumar.com/projects/thetutor-me)** · learning platform | API slowed under load; everyone blamed the database | Traced repeated upstream calls inside one request, added a request-scoped cache in middleware, moved sessions off the app box so machines could be added on AWS | Held 50K+ concurrent users; API ~25% faster in my own benchmark |
+| **[EventBuizz](https://contactumar.com/projects/eventbuizz)** · live events | Schedule changes showed only after refresh | Socket.IO with a Redis adapter so every process reaches every client; Laravel for domain, Next.js for the live surface | Engagement up ~30% (client analytics) |
+| **[ParkFlow](https://contactumar.com/projects/parkflow)** · airport parking | Travellers could not see availability; operators priced blind | Vue + Inertia on Laravel; operator analytics built before booking polish | Booking ~25% faster (staging); pre-booking up ~30% (client) |
+| **[Doocado](https://contactumar.com/projects/doocado)** · restaurant ordering | Branded ordering per restaurant without a deployment per restaurant | One multi-tenant Laravel app with tenant-scoped data, branding and analytics | Live in the USA, Mexico and Brazil |
+| **[DineHome](https://contactumar.com/projects/dinehome)** · food delivery | Payments and CMS to integrate; releases depended on one person | Gateway and CMS integration with failure paths; documented local → staging → production route over Git | Running in Norway with repeatable releases |
+
+Numbers above are published on [contactumar.com](https://contactumar.com), client-reported, or my own staging benchmarks. Where I do not have a measured figure I describe the result instead of inventing one.
+
+---
+
+## Problem → fix patterns I reuse
+
+| Problem | Fix |
 |---|---|
-| **The AI demo works. Now it has to ship.** | Scoped retrieval, per-call ownership and spend ceiling, queued model calls with retry policy, traces plus an eval set, deterministic fallback |
-| **Customers are charged or sold twice.** | Idempotency keys, Redis holds with expiry, an explicit state machine, audit rows |
-| **Search and catalog pages time out.** | Elasticsearch index, Redis cache with real invalidation, read replicas, async reindex |
-| **Webhooks arrive twice, late or out of order.** | Signature verification, an event ledger, replay tooling, circuit breakers |
-| **Many customers share one codebase.** | Tenant-scoped data access, tenant-aware queues and cache, per-tenant config, isolation tests on every release |
-
----
-
-## Selected work
-
-### Established platforms
-
-| | Platform | Problem | Fix | Outcome |
-|---|---|---|---|---|
-| 01 | **[TheTutor.me](https://contactumar.com/projects/thetutor-me)** · learning platform | API slowed as traffic grew; the database got the blame | Traced duplicate upstream calls, added a request-scoped cache, moved sessions off the app box for horizontal scale on AWS | Held 50K+ concurrent users; API ~25% faster in my benchmark |
-| 02 | **[EventBuizz](https://contactumar.com/projects/eventbuizz)** · real-time events | Schedule changes only appeared after refresh | Socket.IO with a Redis adapter so every process reaches every client; Laravel for domain, Next.js for the live surface | Engagement up ~30% (client analytics) |
-| 03 | **[ParkFlow](https://contactumar.com/projects/parkflow)** · airport parking SaaS | Travellers could not see availability; operators priced blind | Vue + Inertia on Laravel; operator analytics built before booking polish | Booking ~25% faster (staging); pre-booking up ~30% (client) |
-| 04 | **[Doocado](https://contactumar.com/projects/doocado)** · multi-tenant ordering | Branded ordering per restaurant without a deployment per restaurant | One multi-tenant Laravel app with scoped data, branding and built-in analytics | Live in the USA, Mexico and Brazil |
-| 05 | **[DineHome](https://contactumar.com/projects/dinehome)** · food ordering | Payments and CMS to integrate; releases depended on one person | Gateway and CMS integration with failure paths; documented local → dev → staging → production route over Git | Running in Norway with a repeatable release process |
-
-### Recent builds, with AI in the pipeline
-
-| | Platform | Problem | Fix | AI layer |
-|---|---|---|---|---|
-| 06 | **[LuckyCharmGold](https://luckycharmgold.com/)** · digital marketplace | Sale-day spikes, price drift, orders marked unpaid after payment, risky payouts | Idempotent orders and payment confirmation, Redis rate cache, Elasticsearch catalog, ALB + SQS workers | Support copilot, price-suggestion signals, anomaly scoring |
-| 07 | **[Direct To You Tickets](https://directtoyoutickets.com/)** · broker operations | Double-sold lots, slow search, timing-out imports | Inventory state machine, Redis holds, Elasticsearch fuzzy search, queued CSV import | Demand forecasting, section pricing, semantic matching, reply assistant |
-| 08 | **[Greencard](https://paygreencard.com/)** · pay-by-bank (ACH) | Five surfaces needing safe, non-duplicating payments | Laravel core + Node API, idempotency keys, HMAC-signed webhooks with replay, Redis locks, sandbox with forced return codes | Duplicate-event and double-pay paths closed |
-
-Metrics above are either published on [contactumar.com](https://contactumar.com), client-reported, or my own staging benchmarks. Where I do not have a measured number I describe the result instead.
-
----
-
-## Production AI readiness checklist
-
-The questions I answer before an LLM feature goes live:
-
-- [ ] **Scope**: can retrieval only see what the current user or tenant may see?
-- [ ] **Ownership**: does every model call record who, which feature and how much it cost?
-- [ ] **Budget**: is there a spend ceiling and a rate limit per feature?
-- [ ] **Failure**: what does the user get when the model is slow, wrong or down?
-- [ ] **Evidence**: can I replay a bad answer and prove a prompt change improved it?
-- [ ] **Rollout**: is it behind a flag, on a thin slice of real data first?
+| Customers charged or sold twice | Idempotency keys · Redis holds with expiry · explicit state machine · audit rows |
+| Webhooks arrive twice, late or out of order | Signature check · event ledger · replay tooling · circuit breakers |
+| Search and catalog time out | Elasticsearch index · Redis cache with real invalidation · read replicas · async reindex |
+| Many customers on one codebase | Tenant-scoped access · tenant-aware queues and cache · per-tenant config · isolation tests |
+| AI feature works in the demo only | Scoped retrieval · per-call owner and budget · queued calls · traces · deterministic fallback |
 
 ---
 
@@ -115,23 +223,12 @@ The questions I answer before an LLM feature goes live:
 
 | Area | What I work with |
 |---|---|
-| **AI / LLM** | OpenAI API · Anthropic Claude · LangChain · RAG and embeddings · Langfuse tracing · copilots and scoring hooks · prompting for product features |
-| **Architecture** | Multi-tenancy · state machines · idempotency and webhooks · microservice boundaries · API contracts · observability |
-| **Backend** | PHP · Laravel · Node.js · CodeIgniter · REST · queues and workers · WooCommerce |
-| **Frontend** | React · Vue · Next.js · Inertia · TypeScript · admin SPAs · real-time UX |
-| **Data** | MySQL · Redis · Elasticsearch / OpenSearch · read replicas · Socket.IO |
-| **Cloud** | AWS ALB · SQS · S3 and CloudFront · RDS · CloudWatch · CI/CD · Docker |
-
----
-
-## How I work
-
-1. **Prove it on a thin slice of real data.** One workflow, one measurement, then widen.
-2. **Every model call has an owner.** Who triggered it, what it may read, what it may spend.
-3. **Isolate before you retrieve.** Search, memory and caches follow the database's boundaries.
-4. **Fix the cause, not the usual suspect.** Profile before you decide.
-5. **Change live systems in slices.** The old path keeps serving traffic until the new one earns it.
-6. **Leave a runbook behind.** If the release path lives in one head, it is not finished.
+| **AI / LLM** | OpenAI and other LLM APIs · embeddings and RAG over FAQs and orders · fraud and pricing scoring hooks · support and broker copilots · semantic matching |
+| **Architecture** | Multi-tenancy · state machines · idempotency · HMAC webhooks · distributed locks · circuit breakers · worker services · shard-ready tables |
+| **Backend** | PHP 8 · Laravel · Node.js (Express/Fastify) · CodeIgniter · REST · WooCommerce |
+| **Frontend** | React · Vue · Next.js · Inertia · TypeScript · Redux/Zustand/Pinia · Socket.IO |
+| **Data** | MySQL/MariaDB with replicas · Redis · Elasticsearch/OpenSearch |
+| **Cloud** | AWS ALB, ASG, EC2/ECS, RDS, ElastiCache, S3, CloudFront, SQS, SES, WAF, Secrets Manager, CloudWatch · Docker · CI/CD |
 
 ---
 
@@ -140,7 +237,7 @@ The questions I answer before an LLM feature goes live:
 | Period | Role | Where | Focus |
 |---|---|---|---|
 | Oct 2024 to Present | Senior Software Engineer | Wanological Solutions | Modularised legacy Laravel, automated diagnostics (~40% faster data processing), LLM features: document retrieval and agents that call internal tools |
-| Aug 2023 to Sep 2024 | Senior Laravel Developer | BitClans IT Solutions | End-to-end Laravel delivery, ownership of code review, testing and release quality |
+| Aug 2023 to Sep 2024 | Senior Laravel Developer | BitClans IT Solutions | End-to-end Laravel delivery with ownership of code review, testing and release quality |
 | Feb 2022 to Dec 2022 | Senior PHP Developer | In All Media | Laravel 4 → 8 migration, Next.js and React Native features |
 | Jun 2018 to Feb 2022 | Senior Web Developer | Hello World Technologies | Laravel APIs, monolith to microservices (downtime down ~30%), CodeIgniter |
 
@@ -160,6 +257,7 @@ Education: Master's in Computer Science, The Islamia University of Bahawalpur.
 
 ## Let's talk
 
-If you have an AI feature that needs to survive production, a platform that needs a sound architecture, or a live system that needs careful hands, send me a short note about the problem. I reply within a working day, and I will tell you plainly if I am not the right fit.
+If you have a platform that carries real money, an AI feature that needs to survive production, or a live system that needs careful hands, send me a short note about the problem. I reply within a working day, and I will tell you plainly if I am not the right fit.
 
+📍 Lahore, Pakistan (UTC+5) · remote worldwide  
 📧 [umar7400@gmail.com](mailto:umar7400@gmail.com) · 🌐 [contactumar.com](https://contactumar.com) · 💼 [LinkedIn](https://www.linkedin.com/in/contacttoumar)

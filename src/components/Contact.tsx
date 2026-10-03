@@ -11,7 +11,7 @@ export function Contact() {
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
           Solution architecture, multi-tenant SaaS, production AI/LLM features, Laravel scaling, or an honest review
-          before a rewrite. Available for remote work with teams anywhere. I reply within a working day, and I will say so
+          before a rewrite. Based in Lahore, Pakistan (UTC+5) and available for remote work with teams anywhere. I reply within a working day, and I will say so
           plainly if I am not the right fit.
         </p>
 
@@ -41,7 +41,7 @@ export function Contact() {
         </div>
 
         <p className="mt-8 font-mono text-xs text-muted">
-          {profile.resumeNote} · Response usually &lt; 24h
+          {profile.resumeNote} · {profile.location} · Response usually &lt; 24h
         </p>
       </div>
     </section>

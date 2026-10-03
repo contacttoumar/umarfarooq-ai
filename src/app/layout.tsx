@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://contactumar.com"),
   title: "Umar Farooq · AI Engineer & Solution Architect",
   description:
-    "AI Engineer and Solution Architect. I put LLM features inside live products and design the multi-tenant, high-traffic systems underneath: RAG, Laravel, Redis, Elasticsearch, AWS.",
+    "AI Engineer and Solution Architect in Lahore, Pakistan. I put LLM features inside live products and design the multi-tenant, high-traffic systems underneath: RAG, Laravel, Redis, Elasticsearch, AWS.",
   keywords: [
     "Umar Farooq",
     "Solution Architect",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Umar Farooq · AI Engineer & Solution Architect",
     description:
-      "Production AI/LLM features, solution architecture and multi-tenant SaaS that holds up under real traffic.",
+      "Production AI/LLM features, solution architecture and multi-tenant SaaS. Lahore, Pakistan · UTC+5.",
     url: "https://contactumar.com",
     siteName: "Umar Farooq",
     type: "website",
