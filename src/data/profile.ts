@@ -9,7 +9,7 @@ export const profile = {
   website: "https://contactumar.com",
   github: "https://github.com/contacttoumar",
   githubRepo: "https://github.com/contacttoumar/umarfarooq-ai",
-  linkedin: "https://www.linkedin.com/in/contacttoumar",
+  linkedin: "https://www.linkedin.com/in/umarfarooq-ai/",
   resumeNote: "AI Engineer · Solution Architect · Senior Software Engineer",
   photo: "/images/umar-farooq.webp",
   photoAlt: "Umar Farooq, AI Engineer and Solution Architect",

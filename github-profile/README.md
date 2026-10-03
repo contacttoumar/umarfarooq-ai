@@ -4,14 +4,14 @@
 
 ### AI Engineer & Solution Architect
 
-**Revenue-critical platforms · Production AI/LLM · Payments & Webhooks · Multi-Tenant SaaS · Laravel · Node · AWS**
+Building platforms where money moves, inventory is contested, and AI has to behave under load.
 
 I build the systems that carry **real money and real traffic**, then add AI where it removes manual work, wired in so it inherits the same guarantees as everything around it: **idempotent, isolated, observable, and able to fail safely.**
 
 <p>
   <a href="https://contactumar.com"><strong>Portfolio</strong></a>
   ·
-  <a href="https://www.linkedin.com/in/contacttoumar"><strong>LinkedIn</strong></a>
+  <a href="https://www.linkedin.com/in/umarfarooq-ai/"><strong>LinkedIn</strong></a>
   ·
   <a href="https://github.com/contacttoumar/umarfarooq-ai"><strong>Portfolio source</strong></a>
   ·
@@ -99,99 +99,32 @@ The decisions that are cheap on day one and expensive on day three hundred:
 | **Doocado** | One multi-tenant application serving restaurants in three countries | Multi-tenant ordering |
 | **EventBuizz** | Live updates reaching every client across processes | Real-time events |
 
-➡️ **Architecture notes, outcomes and work history:** [contactumar.com](https://contactumar.com) · [LinkedIn](https://www.linkedin.com/in/contacttoumar)
+➡️ **Architecture notes, outcomes and work history:** [contactumar.com](https://contactumar.com) · [LinkedIn](https://www.linkedin.com/in/umarfarooq-ai/)
 
 ---
 
 ## Technology stack
 
-<table>
-<tr>
-<td valign="top" width="33%">
+<p>
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+</p>
+<p>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+  <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" alt="Elasticsearch" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+</p>
 
-### Backend
-
-* PHP 8
-* Laravel
-* Node.js (Express, Fastify)
-* CodeIgniter
-* REST APIs
-* Webhooks
-* Queues and workers
-* WooCommerce
-
-</td>
-<td valign="top" width="33%">
-
-### Frontend
-
-* React
-* Vue.js
-* Next.js
-* Inertia.js
-* TypeScript
-* Socket.IO
-* Redux / Zustand / Pinia
-* Real-time UX
-
-</td>
-<td valign="top" width="33%">
-
-### Data
-
-* MySQL / MariaDB
-* Read replicas
-* Redis
-* Elasticsearch / OpenSearch
-* Shard-ready tables
-* Query and index tuning
-* Data modelling
-
-</td>
-</tr>
-
-<tr>
-<td valign="top">
-
-### AI / LLM
-
-* OpenAI and other LLM APIs
-* Embeddings
-* RAG
-* Fraud and pricing scoring
-* Copilots
-* Semantic matching
-* Prompting for product features
-
-</td>
-<td valign="top">
-
-### Infrastructure
-
-* AWS: ALB, ASG, EC2 / ECS
-* RDS, ElastiCache, OpenSearch
-* S3, CloudFront, SQS, SES
-* WAF, Secrets Manager
-* CloudWatch
-* Docker
-* CI/CD
-
-</td>
-<td valign="top">
-
-### Architecture
-
-* Multi-tenancy
-* State machines
-* Idempotency
-* Distributed locks
-* Circuit breakers
-* Event ledgers and replay
-* Observability
-
-</td>
-</tr>
-</table>
+Also day-to-day: Inertia, Socket.IO, WooCommerce, SQS, ALB / ASG, CloudFront, CloudWatch, HMAC webhooks, state machines, multi-tenancy.
 
 ---
 
@@ -218,15 +151,17 @@ I'm based in **Lahore, Pakistan (UTC+5)** and work remotely with teams worldwide
 
 [**Portfolio**](https://contactumar.com)
  · 
-[**LinkedIn**](https://www.linkedin.com/in/contacttoumar)
+[**LinkedIn**](https://www.linkedin.com/in/umarfarooq-ai/)
  · 
 [**Email**](mailto:umar7400@gmail.com)
 
 <br />
 
-<sub>
-AI Engineer · Solution Architect · Production LLM Systems · Multi-Tenancy · Payments & Webhooks · Laravel · Node · React · Vue · Redis · Elasticsearch · AWS
-</sub>
+<p>
+  <a href="https://contactumar.com"><img src="https://img.shields.io/badge/Portfolio-contactumar.com-0f766e?style=flat-square" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/umarfarooq-ai/"><img src="https://img.shields.io/badge/LinkedIn-umarfarooq--ai-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:umar7400@gmail.com"><img src="https://img.shields.io/badge/Email-umar7400%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
 
 <br /><br />
 
