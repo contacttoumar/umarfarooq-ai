@@ -150,7 +150,7 @@ export const projects = [
     summary:
       "Laravel on AWS holding 50,000+ concurrent users. Request-scoped caching of third-party calls cut API time ~25%; course completion rose ~40% on the client's analytics.",
     stack: ["Laravel", "PHP", "AWS", "MySQL", "REST"],
-    image: "/images/project-thetutor-me.png",
+    image: "/images/cover-thetutor-me.svg",
     href: "https://contactumar.com/projects/thetutor-me",
   },
   {
@@ -162,7 +162,7 @@ export const projects = [
     summary:
       "Laravel back office with Next.js/React tracking. Socket.IO + Redis adapter pushed live schedule changes to attendees—engagement up ~30%.",
     stack: ["Laravel", "Next.js", "React", "Socket.IO", "Redis"],
-    image: "/images/project-eventbuizz.png",
+    image: "/images/cover-eventbuizz.svg",
     href: "https://contactumar.com/projects/eventbuizz",
   },
   {
@@ -174,7 +174,7 @@ export const projects = [
     summary:
       "Vue + Inertia over Laravel: advance booking, live availability, and an operator revenue dashboard. Pre-booking and revenue both moved ~25–30% per client reports.",
     stack: ["Vue.js", "Inertia", "Laravel", "MySQL"],
-    image: "/images/project-parkflow.png",
+    image: "/images/cover-parkflow.svg",
     href: "https://contactumar.com/projects/parkflow",
   },
   {
@@ -186,7 +186,7 @@ export const projects = [
     summary:
       "One Laravel codebase for restaurant brands across the USA, Mexico, and Brazil—tenant-scoped data, branding, and sales reporting.",
     stack: ["Laravel", "PHP", "MySQL", "SaaS"],
-    image: "/images/project-doocado.png",
+    image: "/images/cover-doocado.svg",
     href: "https://contactumar.com/projects/doocado",
   },
   {
@@ -198,7 +198,7 @@ export const projects = [
     summary:
       "Food ordering platform with payments, CMS integration, and a written Git deploy path from local through staging to production.",
     stack: ["Laravel", "PHP", "MySQL"],
-    image: "/images/project-dinehome.png",
+    image: "/images/cover-dinehome.svg",
     href: "https://contactumar.com/projects/dinehome",
   },
 ];

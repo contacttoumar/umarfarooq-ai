@@ -23,20 +23,20 @@ export function Work() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="group grid gap-5 border-t border-[var(--line)] py-8 md:grid-cols-[140px_1fr_200px] md:items-start md:gap-8"
+              className="group grid gap-5 border-t border-[var(--line)] py-8 md:grid-cols-[220px_1fr_180px] md:items-start md:gap-8"
             >
               <a
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative aspect-[16/10] overflow-hidden rounded-lg border border-[var(--line)] bg-paper-deep md:aspect-square"
+                className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--line)] shadow-[0_12px_30px_rgba(18,24,31,0.08)]"
               >
                 <Image
                   src={project.image}
-                  alt=""
+                  alt={`${project.title} cover`}
                   fill
                   className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                  sizes="160px"
+                  sizes="220px"
                 />
               </a>
               <div>

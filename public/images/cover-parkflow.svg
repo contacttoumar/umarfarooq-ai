@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b45309"/>
+      <stop offset="1" stop-color="#12181f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <circle cx="640" cy="120" r="160" fill="#fff" fill-opacity="0.06"/>
+  <circle cx="720" cy="380" r="120" fill="#fff" fill-opacity="0.05"/>
+  <text x="48" y="210" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">ParkFlow</text>
+  <text x="48" y="270" fill="#fff" fill-opacity="0.75" font-family="Arial, sans-serif" font-size="26">Airport parking SaaS</text>
+  <rect x="48" y="320" width="72" height="6" rx="3" fill="#fff" fill-opacity="0.85"/>
+</svg>
