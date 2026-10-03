@@ -10,7 +10,7 @@ export const profile = {
   email: "umar7400@gmail.com",
   phone: "",
   website: "https://contactumar.com",
-  github: "https://github.com/Umar-444",
+  github: "https://github.com/contacttoumar",
   linkedin: "https://www.linkedin.com/in/contacttoumar",
   resumeNote: "Senior Software Engineer · Senior PHP / Laravel",
   photo: "/images/umar-farooq.webp",

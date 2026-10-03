@@ -9,11 +9,12 @@ Eight years on systems that were already live when I arrived — migrations, per
 [![Portfolio](https://img.shields.io/badge/Portfolio-contactumar.com-0f766e?style=for-the-badge)](https://contactumar.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-contacttoumar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/contacttoumar)
 [![Email](https://img.shields.io/badge/Email-umar7400%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:umar7400@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Umar--444-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Umar-444)
+[![GitHub](https://img.shields.io/badge/GitHub-contacttoumar-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/contacttoumar)
+[![Repo](https://img.shields.io/badge/Repo-umarfarooq--ai-0f766e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/contacttoumar/umarfarooq-ai)
 
 **Lahore, Pakistan · UTC+5 · Open to senior & lead roles**
 
-<img src="https://komarev.com/ghpvc/?username=Umar-444&label=Profile%20views&color=0f766e&style=flat" alt="profile views" />
+<img src="https://komarev.com/ghpvc/?username=contacttoumar&label=Profile%20views&color=0f766e&style=flat" alt="profile views" />
 
 </div>
 
@@ -29,6 +30,9 @@ Most of my work lands on production apps with real traffic. I care about checkou
 $ whoami
 umar farooq · senior software engineer · laravel / react / vue / node · ai · lahore
 
+$ github
+github.com/contacttoumar · portfolio repo: umarfarooq-ai
+
 $ stack --daily
 laravel · php · react · vue · node · mysql · redis · elasticsearch · aws · openai
 ```
@@ -43,7 +47,7 @@ laravel · php · react · vue · node · mysql · redis · elasticsearch · aws
 | **Concurrent users sustained** | 50K+ (TheTutor.me) |
 | **Featured platforms** | LuckyCharmGold · Direct To You Tickets · Greencard |
 | **Also shipped** | EventBuizz · ParkFlow · Doocado · DineHome |
-| **Focus** | Laravel · React/Vue · Node microservices · Redis/ES · AWS ALB · AI |
+| **GitHub** | [contacttoumar](https://github.com/contacttoumar) · [umarfarooq-ai](https://github.com/contacttoumar/umarfarooq-ai) |
 
 ---
 
@@ -84,40 +88,20 @@ Multi-repo fintech: Laravel core, Node agent API, React/Vue panels, WooCommerce 
 | Layer | Tools |
 |---|---|
 | **Frontend** | React.js · Vue.js · Next.js · TypeScript · Inertia · Livewire |
-| **Backend** | Laravel · PHP · Node.js (Express/Fastify) · REST · WooCommerce |
+| **Backend** | Laravel · PHP · Node.js · REST · WooCommerce |
 | **Data** | MySQL/RDS · Redis · Elasticsearch/OpenSearch · Socket.IO |
 | **Cloud** | AWS ALB · EC2/ECS · S3 · CloudFront · SQS · SES · CloudWatch · WAF |
 | **AI** | OpenAI · Claude · LangChain · RAG · pricing/fraud/support copilots |
-| **Practices** | Idempotency · distributed locks · webhooks · CI/CD · observability |
-
----
-
-## How I work
-
-1. **Measure before proposing** — profile the slow path; don't guess the database every time  
-2. **Move one flow at a time** — migrations and cutovers that keep traffic online  
-3. **Write down how to deploy it** — the team ships when I'm offline  
-4. **AI with evaluation** — production scoring and copilots, not slideware demos  
-
----
-
-## Experience
-
-- **Senior Software Engineer** — Wanological Solutions *(Oct 2024 – Present)* · Lahore  
-- **Senior Laravel Developer** — BitClans IT Solutions *(2023 – 2024)*  
-- **Senior PHP Developer** — In All Media *(2022)* · Laravel 4 → 8 migration  
-- **Senior Web Developer** — Hello World Technologies *(2018 – 2022)* · APIs & microservices  
-
-**Education:** Master's in Computer Science — The Islamia University of Bahawalpur
 
 ---
 
 ## Connect
 
-- Portfolio → [contactumar.com](https://contactumar.com)  
+- Portfolio site template → [github.com/contacttoumar/umarfarooq-ai](https://github.com/contacttoumar/umarfarooq-ai)  
+- Live site → [contactumar.com](https://contactumar.com)  
 - LinkedIn → [linkedin.com/in/contacttoumar](https://www.linkedin.com/in/contacttoumar)  
 - Email → [umar7400@gmail.com](mailto:umar7400@gmail.com)  
-- GitHub → [github.com/Umar-444](https://github.com/Umar-444)  
+- GitHub → [github.com/contacttoumar](https://github.com/contacttoumar)  
 
 > Tell me about the role — or what is breaking. I reply within a working day.
 
