@@ -28,12 +28,23 @@ npm run build && npm start
 
 ## Publish
 
+With a GitHub token that can create repositories (`repo` scope), one command creates both public repos and pushes:
+
+```bash
+GITHUB_TOKEN=ghp_xxx ./scripts/publish-to-github.sh
+```
+
+- `contacttoumar/umarfarooq-ai` gets this project.
+- `contacttoumar/contacttoumar` gets `github-profile/README.md`, which is what shows on the front page of github.com/contacttoumar.
+
+Manual alternative: create both repos as public on GitHub, then
+
 ```bash
 git remote add github https://github.com/contacttoumar/umarfarooq-ai.git
 git push -u github main
 ```
 
-Profile home: paste `github-profile/README.md` into the repo **`contacttoumar/contacttoumar`**.
+and paste `github-profile/README.md` into `README.md` of the `contacttoumar/contacttoumar` repo.
 
 ## Content notes
 
